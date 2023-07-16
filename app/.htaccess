@@ -1,0 +1,11 @@
+//Rewrite to www
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^cuantime.es[nc]
+RewriteRule ^(.*)$ http://www.cuantime.es/$1 [r=301,nc]
+
+//Custom 404 errors
+ErrorDocument 404 404.php
+
+//Custom 500 errors
+ErrorDocument 500 500.php

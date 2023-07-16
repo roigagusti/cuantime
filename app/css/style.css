@@ -1,0 +1,320 @@
+/*
+* Title: Style
+* Author: Aldasoro
+* Template: Aldasoro
+* Version: 1.0
+* Copyright 2021 Aldasoro Inc.
+* Url: https://www.aldasoro.ml
+
+
+Content table
+--------------
+1. Search
+2. Fitxatges
+
+/* ----- 1. Search ----- */
+.searchResults{
+    position: fixed;
+    top: 70px;
+    right: 0;
+    left: 250px;
+    z-index: 999;
+
+    padding-top:20px;
+    padding-left:50px;
+    padding-bottom:30px;
+    background-color:rgba(255,255,255,0.97);
+    -webkit-box-shadow: 0 2px 4px rgba(15,34,58,0.03);
+    box-shadow: 0 2px 4px rgba(15,34,58,0.03)
+    color:#333;
+}
+.resultQuery{
+    list-style: none;
+    padding-left:0;
+    margin-bottom:0;
+}
+/* ----- 2. Fitxatges ----- */
+.month-count{
+	text-align: left;
+}
+.fitx-data-picker{
+	text-align: center;
+}
+.add-fitxatge{
+	text-align: right;
+}
+.fitx-mes-picker{
+	text-align: center;
+    width: 260px;
+    border: #ddd solid 1px;
+    border-radius: 20px;
+    display: inline-block;
+}
+.font-bold{
+	font-weight: bold;
+}
+.text-gray-600{
+	color:#989898;
+}
+.taula-fitxatges{
+    margin-top:80px;
+}
+.fitxatge-on{
+    background-color: #34c38f;
+}
+.fitxatge-icon{
+    color:#34c38f;
+}
+.fitxatge-icon-danger{
+    color:#f46a6a;
+}
+
+/* ----- 3. Factures ----- */
+.dadesFactura{
+    width:35%;
+    padding-right:10px;
+    padding-left:10px;
+}
+.fullFactura{
+    width: 21cm;
+    height: 29.7cm;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-bottom: 100px;
+}
+.avisNoFactura{
+    display:none;
+    width: 100%;
+    padding-left:10px;
+    padding-right:10px;
+    text-align: center;
+    margin-top:40px;
+}
+
+/* ----- 4. Configuració ----- */
+.dadesConfig{
+    padding-left:0;
+    list-style:none;
+}
+.dadesTitles{
+    color:#999;
+    display:inline-block;
+
+    max-width:40%;
+    position:relative;
+    width:100%;
+    padding-right:10px;
+    padding-left:10px;
+}
+.dadesFacturacio{
+    max-width:60%;
+    position:relative;
+    width:100%;
+    padding-right:10px;
+    padding-left:10px;
+}
+.planTitle{
+    width:100%;
+    text-align:center;
+}
+.planTitle i{
+    font-size:25px;
+}
+.plansSuscripcio>.plan{
+    border: #dcdcdc 1px solid;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+.plansSuscripcio>.plan.active{
+    border: #34c38f 1px solid;
+}
+.plansSuscripcio>.plan a{
+    color:#333;
+}
+.panellBilling{
+    margin-top:30px;
+}
+#name{
+    width:100%;
+    border:none;
+    font-weight:400;
+    font-family:'Roboto', Open Sans, Segoe UI, sans-serif;
+    font-size:16px;
+    color: #555;
+}
+.notificacio{
+    position:absolute;
+    z-index:99999;
+    right: 20px;
+}
+
+/* ----- 5. Tareas ----- */
+.taskItem{
+    margin-top:10px;
+    background-color:#f5f6f8;
+    padding:10px;
+    border-radius:5px 
+}
+.taskTitle{
+}
+.taskBody{
+    padding:5px!important;
+    font-size:0.9em;
+}
+.taskTime{
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-left:10px;
+    padding-right:10px;
+
+    font-size:0.95em;
+    color:#999;
+}
+.taskPriority{
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-left:10px;
+
+    text-align: right;
+    padding-right:10px;
+    display: block;
+}
+.taskDescription{
+    margin-top:10px;
+}
+.taskClose{
+    margin-top:10px;
+}
+.taskClose a{;
+    color:#999;
+}
+.notTasks{
+    margin-top:10px;
+    color:#999; 
+    font-size:0.9em;   
+}
+
+/* ----- 6. Impostos ----- */
+.ivaTable ul{
+    list-style: none;
+    padding-left:0px;
+}
+.ivaTable li{
+    height: 25px;
+    padding-top:3px;
+}
+.ivaTable .title{
+    height: 25px;
+    font-weight: 500;
+    font-size: 0.9em;
+}
+.titol h6{
+    display: block;
+    width: 100%
+}
+.titol p{
+    display: block
+}
+.col-casellaNumero .title{
+    text-align: center;
+    margin-right:-10px;
+}
+.col-iva-2,.col-iva-3,.col-iva-4,.col-iva-6,.col-iva-8,.col-iva-10,.col-iva-12{
+    position: relative;
+    width: 100%
+}
+.col-iva-2{max-width: 16.66%}
+.col-iva-3{max-width: 33.33%}
+.col-iva-4{max-width: 25%}
+.col-iva-6{max-width: 50%}
+.col-iva-8{max-width: 66.66%}
+.col-iva-10{max-width: 83.33%}
+.col-iva-12{max-width: 100%}
+
+.ivaInline{display: inherit !important}
+.ivaInline li{
+    border-bottom:1px solid #f1f1f1;
+}
+.col-casellaNumero li{
+    position: relative;
+    width:30px;
+    border-left:1px solid #f1f1f1;
+    border-right:1px solid #f1f1f1;
+    background-color:#f1f1f1;
+    text-align: center;
+}
+.col-casellaValue{
+    position: relative;
+    width: 100%;
+    text-align: right;
+    padding-right:20px;
+}
+#ivaDeducible{
+    margin-top:50px;
+}
+.ivaTable{
+    margin-left: 16.66667%;
+    width:66.66%;
+    font-size: 0.9em;
+}
+.noData{
+    background-color: white!important;
+    border-bottom:0px solid #fff!important;
+    border-left:0px solid #fff!important;
+    border-right:0px solid #fff!important;
+}
+.pantallaNoDispo{
+    display: none;
+}
+.chooseModel{
+    margin-left:16.66%;
+    max-width: 66.66%;
+    position: relative;
+    width: 100%
+}
+.exportModel{
+    text-align: center;
+    padding-top:30px;
+}
+.titol{
+    margin-top:20px;
+    margin-bottom:30px;
+}
+@media (max-width: 1573px) {
+    .ivaTable{
+        margin-left: 8.3325%;
+        width:83.33%;
+    }
+    .chooseModel{
+        margin-left:8.33%;
+        max-width: 83.33%;
+    }
+}
+@media (max-width: 1321px) {
+    .ivaTable{
+        margin-left: 0;
+        width:100%;
+        padding-left:20px;
+        padding-right: 20px;
+    }
+    .chooseModel{
+        margin-left:0px;
+        max-width: 100%;
+        padding-left:20px;
+        padding-right: 20px;
+    }
+}
+@media (max-width:755px) {
+    .ivaTable{
+        display: none;
+    }
+    .pantallaNoDispo{
+        display: initial;
+    }
+}

@@ -1,0 +1,328 @@
+/*
+* Title: App. Style
+* Author: Aldasoro
+* Template: Mesural
+* Version: 0.2.1
+* Copyright 2020 Mesural Inc.
+* Url: https://www.mesural.com
+
+
+Content table
+--------------
+1. Fonts
+2. Codi general
+3. Login i registre
+4. Navegador i navegador mòbil
+5. Dashboard
+
+/* ----- 1. Fonts ----- */
+@import url(https://fonts.googleapis.com/css?family=Raleway:100,300,400,500);
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400,500);
+@font-face {
+ font-family:Rubik;
+ font-style:normal;
+ font-weight:300;
+ font-display:swap;
+ src:local('Rubik Light'),
+ local('Rubik-Light'),
+ url(https://fonts.gstatic.com/s/rubik/v9/iJWHBXyIfDnIV7Fqj2md8WU.ttf) format('truetype')
+}
+@font-face {
+ font-family:Rubik;
+ font-style:normal;
+ font-weight:400;
+ font-display:swap;
+ src:local('Rubik'),
+ local('Rubik-Regular'),
+ url(https://fonts.gstatic.com/s/rubik/v9/iJWKBXyIfDnIV7nBrXk.ttf) format('truetype')
+}
+@font-face {
+ font-family:Rubik;
+ font-style:normal;
+ font-weight:500;
+ font-display:swap;
+ src:local('Rubik Medium'),
+ local('Rubik-Medium'),
+ url(https://fonts.gstatic.com/s/rubik/v9/iJWHBXyIfDnIV7Eyjmmd8WU.ttf) format('truetype')
+}
+@font-face {
+ font-family:Rubik;
+ font-style:normal;
+ font-weight:700;
+ font-display:swap;
+ src:local('Rubik Bold'),
+ local('Rubik-Bold'),
+ url(https://fonts.gstatic.com/s/rubik/v9/iJWHBXyIfDnIV7F6iGmd8WU.ttf) format('truetype')
+}
+
+/* ----- 2.Codi general ----- */
+html{
+    height:100%;
+}
+body{
+    background:#f5f6f8;
+    height:100%;
+ 	margin:0;
+    font-family: 'Segoe UI', 'Rubik','Roboto','Helvetica','Myriad Set Pro','Lucida Grande','Helvetica Neue','Arial','Verdana',serif;
+}
+
+a{
+    text-decoration: none;
+}
+select, input[type="text"],input[type="email"],input[type="password"]{
+    -webkit-appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.hidden{
+    display: none !important;
+}
+.fail,.success{
+    font-family: 'Segoe UI', 'Rubik','Roboto','Helvetica','Myriad Set Pro','Lucida Grande','Helvetica Neue','Arial','Verdana',serif;
+    font-size: 14px;
+    text-align:center;
+}
+.fail{
+    color:rgb(165,0,0);    
+}
+.success{
+    color:#34c38f;    
+}
+.disabled{
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* -----  3. Login ----- */
+.content{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0px;
+    position: relative;
+    z-index: 1;
+    height: 95vh;
+}
+.franja-central{
+    width: 400px;
+}
+.logo{
+    width: 100%;
+    text-align: center;
+    margin-top:100px;
+}
+.logo img{
+    width:150px;
+}
+.box{
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 4px;
+    text-align: center;
+}
+.box-shadow{
+    box-shadow: 0 7px 14px 0 rgba(60,66,87,.08), 0 3px 6px 0 rgba(0,0,0,.12);
+}
+.box-login{
+    margin-top: 50px;
+    padding:40px;
+    padding-bottom:50px;
+}
+.login-title{
+    width: 100%;
+    text-align: left;
+    color: #000;
+    font-size: 18px;
+}
+.login-input{
+    margin-top:20px;
+    text-align: left;
+}
+.box label{
+    margin-bottom:5px;
+    color:#666;
+    font-size:14px;
+    width: 100%;
+    font-weight: 300;
+}
+.box input{
+    border: solid 1px #dcdcdc;
+    margin-top:5px;
+    margin-bottom:15px;
+    color:#999;
+    font-size:14px;
+    height: 40px;
+    border-radius:4px;
+    box-sizing: border-box;
+    width: 100%;
+    padding-left:15px;
+}
+.label-pass{
+    display: inline-block;
+    width: 40%;
+    text-align: left;
+}
+.label-forgot{
+    display: inline-block;
+    width: 60%;
+    text-align: right;
+}
+.label-forgot a{
+    color:#34c38f;
+}
+.box button{
+    display: inline-block;
+    padding: 6px 12px;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-radius: 4px;
+}
+.btn-access{
+    background:#34c38f;
+    color: #fff;
+    height: 40px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: 'Segoe UI', 'Roboto','Helvetica','Myriad Set Pro','Lucida Grande','Helvetica Neue','Helvetica','Arial','Verdana',serif;
+    width: 100%;
+}
+.forgot-notice{
+    width: 100%;
+    text-align: left;
+    color: #333;
+    font-size: 14px;
+}
+.alert-zone{
+    margin-top:25px;
+    text-align: center;
+    font-size: 14px;
+    color:#333;
+}
+.alert-zone a{
+    color:#34c38f;
+}
+.alert-zone > .register{
+    margin-bottom:20px;
+}
+
+.footer{
+    width: 100%;
+    height: 5vh;
+    text-align: center;
+    font-size: 14px;
+    color:#666;
+}
+.footer a{
+    color:#666;
+    margin-left:10px;
+    margin-right:10px;   
+}
+.footer a:hover{
+    color:#333;  
+}
+
+
+/* -----  4. Register ----- */
+.register-content{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0px;
+    position: relative;
+    z-index: 1;
+}
+.left-side{
+    width: 50%;
+    height: 100vh;
+    background:#34c38f;
+    background:-webkit-linear-gradient(to right, #34c38f, #11998e);
+    background:linear-gradient(to right, #34c38f, #11998e);
+}
+.franja-left{
+    width: 100%;
+    text-align: center;
+}
+.logo-register{
+    width: 100%;
+    margin-top: 40vh;
+}
+.logo-register img {
+    width: 250px;
+}
+
+.right-side{
+    width: 50%;
+    box-shadow: inset 1px 0 #e3e8ee;
+    background-color: #fff;
+    height: 100vh;
+}
+.franja-right{
+    width: 40%;
+}
+.box-register{
+    text-align: left;
+    color: #333;
+    font-size: 24px;
+    margin-left:60px;
+    margin-top:90px;
+}
+.box-register > .footer{
+    margin-top:200px;
+}
+.terms{
+    position:relative;
+    font-family: 'Segoe UI', 'Roboto','Helvetica','Myriad Set Pro','Lucida Grande','Helvetica Neue','Helvetica','Arial','Verdana',serif;
+    font-size: 13px;
+    color: #999;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.terms a{
+    color:#666; 
+}
+.terms input[type="checkbox"]{
+    height:15px;
+    display: inline-block;
+    position: relative;
+    width:auto;
+    margin-right: 15px;
+    top:3px;
+}
+.rememberMe{
+    position:relative;
+    font-size: 13px;
+    color: #666;
+    margin-top:-10px;
+    margin-bottom:10px;
+}
+.rememberMe input[type="checkbox"]{
+    height:15px;
+    display: inline-block;
+    position: relative;
+    width:auto;
+    margin-right: 10px;
+    top:3px;
+}

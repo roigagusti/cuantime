@@ -1,0 +1,12 @@
+# ignore ALL .log files
+*.log
+
+# ignore ALL files in ANY directory named ...
+.git/
+app/assests/
+app/conexiones/conexion.php
+app/lib/
+app/stripe/
+app/vendor/
+www/conexiones/conexion.php
+www/stripe/

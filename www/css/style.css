@@ -1,0 +1,199 @@
+/*
+* Title: Style
+* Author: Aldasoro
+* Template: Aldasoro
+* Version: 1.0
+* Copyright 2021 Aldasoro Inc.
+* Url: https://www.aldasoro.ml
+
+
+Content table
+--------------
+1. Header
+
+/* ----- 0. Basics ----- */
+body,html{
+    padding:0px;
+    margin:0px;
+    width:100%;
+    z-index: 0;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+}
+a{
+    text-decoration:none;
+    cursor: pointer;
+}
+a:hover{
+    text-decoration: none;
+    cursor: pointer;
+}
+ul{
+    margin: 0px;
+    padding: 0px;
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+/* ----- 1. Header ----- */
+header{
+	height:700px;
+
+	background:#34c38f;
+	background:-webkit-linear-gradient(to right, #34c38f, #11998e);
+	background:linear-gradient(to right, #34c38f, #11998e);
+	overflow:hidden
+}
+.headerPage{
+	height:150px;
+}
+.wrapper{
+	margin-left:300px;
+	margin-right:300px;	
+}
+.cuantimeLogo{
+	margin-top:22px;
+	height:26px
+}
+.navBar{
+	list-style:none;
+	display:inherit;
+	position:relative;
+	top:28px;
+	text-align:center;
+	font-weight:700;
+	color:#fff;
+}
+.navBar li{
+	display:inline;
+	margin-right:20px;
+	margin-left:20px;
+}
+.navBar a{
+	color:#fff;
+	text-transform:uppercase;
+	font-weight:300;
+}
+.navBar a:hover{
+	opacity:0.7;
+}
+.headerLogo{
+	display:block;
+}
+.headerMenu{
+	display:block;
+}
+.headerLogIn{
+	margin-top:16px;
+	text-align:right;
+}
+.headerLogIn a,.subheader a{
+	border-radius:30px;
+	color:#fff;
+	background-color:rgba(255,255,255,0.25);
+	border-color:rgba(255,255,255,0.25);
+
+	display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .47rem .75rem;
+    font-size: .9rem;
+    line-height: 1.5;
+
+    transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+}
+.langMenu{
+	color:#000;
+	position:absolute;
+	z-index:5;
+	width:100%;
+}
+.langMenu a{
+	color:#74788d;
+	text-transform:none;
+}
+.langMenu.dropdown-menu{
+	margin-top:10px;
+	background:rgba(255,255,255,0.9);
+	padding:5px;
+	width: 200px;
+}
+.langMenu.show{
+	display: inline-grid;
+}
+/* ----- 2. Subheader ----- */
+.subheader{
+	margin-top:280px;
+}
+.subheader h1{
+	color:#fff;
+	font-size:35px;
+	font-weight:500;
+}
+.subheader h2{
+	color:rgba(255,255,255,0.8);
+	font-size: 20px;
+	font-weight:400;
+}
+.subheader img{
+	margin-top:0px;
+	width:1200px;
+}
+.infoContent{
+	margin-bottom:30px;
+}
+.infoContent h4{
+	margin-top:40px;
+}
+.infoContent img{
+	width: 100%;
+}
+.priceContent{
+	margin-top:150px;
+}
+.subheader a{
+	font-size:20px;
+	margin-top:20px;
+}
+
+/* ----- 3. Footer ----- */
+footer{
+    width: 100%;
+    border-top:1px solid #dcdcdc;
+    font-size: 12px;
+    line-height: 22px;
+    font-weight: 300;
+    margin-top:50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.footerList{
+	list-style:none;
+	font-weight:300;
+}
+.footerList a{
+	color:#495057;
+	font-weight:500;
+}
+.footerList img{
+	height:20px;
+	margin-bottom:10px
+}
+.footerList i{
+	color:#34c38f;
+}
+.footerTitle{
+	font-weight:700;
+}
+.copyright{
+	margin-right:0px;
+    color:#969696;
+    text-align:center;
+    margin-top:60px;
+}

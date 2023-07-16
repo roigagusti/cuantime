@@ -1,0 +1,58 @@
+/*
+* Title: Responsive
+* Author: Aldasoro
+* Template: Aldasoro
+* Version: 1.0
+* Copyright 2021 Aldasoro Inc.
+* Url: https://www.aldasoro.ml
+
+
+Content table
+--------------
+1. Devices < width: 1199px
+2. Devices < width: 1060px
+3. Devices < width: 991px
+4. Devices < width: 767px
+5. Devices < width: 460px
+6. Responsive menu
+
+/* ----- Devices < width: 1492px ----- */
+@media (max-width: 1492px) {
+}
+/* ----- Devices < width: 1260px ----- */
+
+/* ----- Devices < width: 920px ----- */
+
+/* ----- Devices < width: 991px ----- */
+@media (max-width: 991px) {
+	.headerLogo,.headerMenu,.headerLogIn{
+		text-align:center;
+		width:100%;
+	}
+	.headerLogo{
+		margin-top:10px;
+	}
+	.headerMenu{
+		margin-top:-5px;
+	}
+	.headerLogIn{
+		margin-top:45px;
+	}
+	footer{
+		text-align: center;
+	}
+	.footerList{
+		margin-top:25px;
+	}
+	.subheader{
+		text-align:center;
+		margin-top:80px;
+	}
+	.subheader img{
+		margin-top:40px;
+	}
+}
+
+/* ----- Devices < width: 468px ----- */
+@media (max-width: 468px) {
+}

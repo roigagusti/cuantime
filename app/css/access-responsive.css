@@ -1,0 +1,68 @@
+/*
+* Title: App. Responsive
+* Author: Aldasoro
+* Template: Mesural
+* Version: 0.1.1
+* Copyright 2020 Mesural Inc.
+* Url: https://www.mesural.com
+
+
+Content table
+--------------
+1. Devices < width: 1199px
+2. Devices < width: 1060px
+3. Devices < width: 991px
+4. Devices < width: 767px
+5. Devices < width: 460px
+6. Responsive menu
+
+/* ----- Devices < width: 1350px ----- */
+@media (max-width: 1550px) {
+	.franja-right{
+	    width: 60%;
+	}
+}
+
+/* ----- Devices < width: 1260px ----- */
+@media (max-width: 1020px) {
+	.franja-right{
+	    width: 75%;
+	}
+}
+
+/* ----- Devices < width: 920px ----- */
+@media (max-width: 900px) {
+	.left-side{
+		display: none;
+	}
+	.right-side{
+		width: 100%;
+	}
+	.franja-right{
+	    width: 70%;
+	}
+}
+
+/* ----- Devices < width: 650px ----- */
+@media (max-width: 525px) {
+	.title{
+		width:200px !important;
+	}
+	.capsule-data-table{
+		width: 285px;
+	}
+}
+
+/* ----- Devices < width: 468px ----- */
+@media (max-width: 468px) {
+	body{
+		background-color: #fff;
+	}
+	.logo{
+		margin-top:50px;
+	}
+	.box-login{
+		box-shadow: none !important;
+		padding-bottom:0;
+	}
+}
