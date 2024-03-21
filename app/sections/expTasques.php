@@ -46,16 +46,16 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right text-right">
                                 <a class="dropdown-item" href="conexiones/administracio.php?action=estatTask&prioritat=0&id=<?php echo $tasca['id'];?>">
-                                    <span class="badge badge-pill badge-soft-secondary font-size-12">Sin prisa</span>
+                                    <span class="badge badge-pill badge-soft-secondary font-size-12"><?php echo $text['Sin prisa'];?></span>
                                 </a>
                                 <a class="dropdown-item" href="conexiones/administracio.php?action=estatTask&prioritat=1&id=<?php echo $tasca['id'];?>">
-                                    <span class="badge badge-pill badge-soft-info font-size-12">Tener en cuenta</span>
+                                    <span class="badge badge-pill badge-soft-info font-size-12"><?php echo $text['Tener en cuenta'];?></span>
                                 </a>
                                 <a class="dropdown-item" href="conexiones/administracio.php?action=estatTask&prioritat=2&id=<?php echo $tasca['id'];?>">
-                                    <span class="badge badge-pill badge-soft-warning font-size-12">Manos a la obra</span>
+                                    <span class="badge badge-pill badge-soft-warning font-size-12"><?php echo $text['Manos a la obra'];?></span>
                                 </a>
                                 <a class="dropdown-item" href="conexiones/administracio.php?action=estatTask&prioritat=3&id=<?php echo $tasca['id'];?>">
-                                    <span class="badge badge-pill badge-soft-danger font-size-12">Urgente</span>
+                                    <span class="badge badge-pill badge-soft-danger font-size-12"><?php echo $text['Urgente'];?></span>
                                 </a>
                             </div>
                         </div>
@@ -66,7 +66,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12 taskClose text-center">
-                        <a href="conexiones/administracio.php?action=removeTask&id=<?php echo $tasca['id'];?>">Borrar tarea</a>
+                        <a href="conexiones/administracio.php?action=removeTask&id=<?php echo $tasca['id'];?>"><?php echo $text['Borrar tarea'];?></a>
                     </div>
                 </div>
             </div>

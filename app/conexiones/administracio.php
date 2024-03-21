@@ -58,7 +58,8 @@ switch($_GET['action']){
 		break;
 
 	case 'removeOferta':
-		if(strtolower($_POST['deleteProjecte'])=="esborrar"){
+		$test_delete = strtolower($_POST['deleteProjecte']);
+		if($test_delete=="esborrar" || $test_delete=="borrar" || $test_delete=="delete" || $test_delete=="supprimer"){
 			$rmOferta = $database->delete("ofertes",['id'=>$_POST['ofertaId']]);
 
 			header('Location: ../ofertes.php?event=oferta-deleted');
@@ -132,8 +133,22 @@ switch($_GET['action']){
 			"facturaEmail" => $facturaEmail,
 			"idUser" => $_POST['userId']
 		]);
-
-		header('Location: ../factures.php?event=factura-success');
+		echo 'numero: '.$_POST['numeroFactura'].'<br>';
+		echo 'idProjecte: '.$_POST['idProjecte'].'<br>';
+		echo 'data: '.date('Y-m-d').'<br>';
+		echo 'import: '.$_POST['facturaImport'].'<br>';
+		echo 'iva: '.$_POST['facturaIVA'].'<br>';
+		echo 'irpf: '.$_POST['facturaIRPF'].'<br>';
+		echo 'facturaNom: '.$facturaNom.'<br>';
+		echo 'facturaDireccio: '.$facturaDireccio.'<br>';
+		echo 'facturaCP: '.$facturaCP.'<br>';
+		echo 'facturaCiutat: '.$facturaCiutat.'<br>';
+		echo 'facturaCIF: '.$facturaCIF.'<br>';
+		echo 'facturaTelefon: '.$facturaTelefon.'<br>';
+		echo 'facturaEmail: '.$facturaEmail.'<br>';
+		echo 'idUser: '.$_POST['userId'];
+		
+		//header('Location: ../factures.php?event=factura-success');
 		break;
 
 	case 'estatFactura':

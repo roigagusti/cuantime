@@ -3,7 +3,7 @@
 		<div class="col-lg-9">
 			<div class="row">
 				<div class="col-lg-3 headerLogo">
-					<a href="//www.cuantime.com"><img src="img/cuantime_dark-lg.png" class="cuantimeLogo"></a>
+					<a href="//www.cuantime.es"><img src="img/cuantime_dark-lg.png" class="cuantimeLogo"></a>
 				</div>
 				<div class="col-lg-6 headerMenu">
 					<ul class="navBar">
@@ -20,14 +20,14 @@
 				</div>
 
                             
-				<div class="col-lg-3 headerLogIn"><a href="//app.cuantime.com/"><?php echo $text['Login'];?></a></div>
+				<div class="col-lg-3 headerLogIn"><a href="//app.cuantime.es/"><?php echo $text['Login'];?></a></div>
 			</div>
 
 			<div class="row subheader">
 				<div class="col-lg-6">
 					<h1><?php echo $text['Titol'];?></h1>
 					<h2><?php echo $text['Subtitol'];?></h2>
-					<a href="//app.cuantime.com/register.php">Usa la versión freemium</a>
+					<a href="//app.cuantime.es/register.php">Usa la versión freemium</a>
 				</div>
 				<div class="col-lg-6">
 					<img src="img/dashboard.png">

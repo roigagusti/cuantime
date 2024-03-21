@@ -15,7 +15,7 @@
 						<li><?php echo $text['Direccio 1'];?></li>
 						<li><?php echo $text['Direccio 2'];?></li>
 						<li>
-					        <a href='mailto:hola&#64;c&#117;&#97;ntime.com'><?php echo $text['Contactanos'];?></a></li>
+					        <a href='mailto:hola&#64;c&#117;&#97;ntime.es'><?php echo $text['Contactanos'];?></a></li>
 					</ul>
 				</div>
 				<div class="col-lg-3">
@@ -23,8 +23,8 @@
 						<li class="footerTitle"><?php echo strtoupper($text['Sobre nosotros']);?></li>
 						<li><a href="index.php#soluciones"><?php echo $text['Soluciones'];?></a></li>
 						<li><a href="index.php#precio"><?php echo $text['Precio'];?></a></li>
-						<li><a href="//app.cuantime.com/login.php"><?php echo $text['Login'];?></a></li>
-						<li><a href="//app.cuantime.com/register.php"><?php echo $text['Registrate'];?></a></li>
+						<li><a href="//app.cuantime.es/login.php"><?php echo $text['Login'];?></a></li>
+						<li><a href="//app.cuantime.es/register.php"><?php echo $text['Registrate'];?></a></li>
 					</ul>
 				</div>
 				<div class="col-lg-3">

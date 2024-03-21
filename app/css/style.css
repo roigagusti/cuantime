@@ -25,13 +25,28 @@ Content table
     padding-bottom:30px;
     background-color:rgba(255,255,255,0.97);
     -webkit-box-shadow: 0 2px 4px rgba(15,34,58,0.03);
-    box-shadow: 0 2px 4px rgba(15,34,58,0.03)
+    box-shadow: 0 2px 4px rgba(15,34,58,0.03);
     color:#333;
 }
 .resultQuery{
     list-style: none;
     padding-left:0;
     margin-bottom:0;
+}
+/* ----- 2. Expedients ----- */
+.show-stats{
+    text-align:right;
+}
+#stats{
+    margin-bottom: 30px;
+    margin-left: 10px;
+}
+.btn-contorn{
+    border:1px solid #34c38f;
+    color:#34c38f;
+}
+.btn-contorn:hover{
+    color:#34c38f;
 }
 /* ----- 2. Fitxatges ----- */
 .month-count{
@@ -157,8 +172,6 @@ Content table
     padding:10px;
     border-radius:5px 
 }
-.taskTitle{
-}
 .taskBody{
     padding:5px!important;
     font-size:0.9em;
@@ -191,7 +204,7 @@ Content table
 .taskClose{
     margin-top:10px;
 }
-.taskClose a{;
+.taskClose a{
     color:#999;
 }
 .notTasks{

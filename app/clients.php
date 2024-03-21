@@ -31,7 +31,7 @@ function inicials($name){
     <?php include_once("sections/meta.php") ?>
 
     <!-- Títol i Favicons -->
-    <title>Cuantime. Clientes</title>
+    <title>Cuantime. <?php echo $text['Clientes'];?></title>
 
     <!-- CSS Libraries -->
     <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -67,12 +67,12 @@ function inicials($name){
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0">Clientes</h4>
+                                <h4 class="mb-0"><?php echo $text['Clientes'];?></h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                     <li class="breadcrumb-item"><a href="index.php">Cuantime</a></li>
-                                    <li class="breadcrumb-item active">Clientes</li>
+                                    <li class="breadcrumb-item active"><?php echo $text['Clientes'];?></li>
                                     </ol>
                                 </div>
 
@@ -86,7 +86,7 @@ function inicials($name){
                     <div class="row">
                         <div class="col-md-4">
                             <div>
-                                <button type="button" class="btn btn-success waves-effect waves-light mb-3" data-toggle="modal" data-target="#addClient"><i class="mdi mdi-plus mr-1"></i> Nuevo cliente</button>
+                                <button type="button" class="btn btn-success waves-effect waves-light mb-3" data-toggle="modal" data-target="#addClient"><i class="mdi mdi-plus mr-1"></i> <?php echo $text['Nuevo cliente'];?></button>
                             </div>
                         </div>
                         <div class="col-lg-12">
@@ -115,19 +115,19 @@ function inicials($name){
                                       "idUser"
                                       ],["idUser"=>$userEmpresa,"ORDER"=>["nom"=>"ASC"],"LIMIT"=>[$limitStart,$limitEnd]]);
                                     $numClientsToUser=count($clients);
-                                    if($numClientsToUser==0){echo "<span style='color:#999'>Aun no se ha añadido ningún cliente</span>";}else{
+                                    if($numClientsToUser==0){echo "<span style='color:#999'>".$text['Aun no se ha añadido ningún cliente']."</span>";}else{
                                     ?>
                                     <div class="table-responsive">
                                         <table class="table table-centered table-nowrap mb-0">
                                             <thead class="thead-light">
                                                 <tr>
-                                                    <th scope="col">Nombre</th>
-                                                    <th scope="col">Empresa</th>
-                                                    <th scope="col">Email</th>
-                                                    <th class="text-center" scope="col">Teléfono</th>
-                                                    <th scope="col">Dirección</th>
-                                                    <th class="text-center" scope="col">Código Postal</th>
-                                                    <th scope="col">Ciudad</th>
+                                                    <th scope="col"><?php echo $text['Nombre'];?></th>
+                                                    <th scope="col"><?php echo $text['Empresa'];?></th>
+                                                    <th scope="col"><?php echo $text['Email'];?></th>
+                                                    <th class="text-center" scope="col"><?php echo $text['Teléfono'];?></th>
+                                                    <th scope="col"><?php echo $text['Dirección'];?></th>
+                                                    <th class="text-center" scope="col"><?php echo $text['Código Postal'];?></th>
+                                                    <th scope="col"><?php echo $text['Ciudad'];?></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -171,7 +171,7 @@ function inicials($name){
                                                     $valorInicial = $limitStart+1;
                                                     $valorFinal = min($limitEnd,$numClients);
 
-                                                    echo "Mostrando del ".$valorInicial." al ".$valorFinal." de ".$numClients." clientes.";?>
+                                                    echo $text["Mostrando del"]." ".$valorInicial." al ".$valorFinal." de ".$numClients." clientes.";?>
                                                 </p>
                                             </div>
                                         </div>

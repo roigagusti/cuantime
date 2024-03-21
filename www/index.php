@@ -17,15 +17,15 @@ include_once("sections/cookies.php");
     <title>Cuantime. <?php echo $text['MetaTitol'];?></title>
 
     <!-- CSS Libraries -->
-    <link href="//app.cuantime.ml/assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
-    <link href="//app.cuantime.ml/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-    <link href="//app.cuantime.ml/assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <link href="//app.cuantime.es/assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <link href="//app.cuantime.es/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="//app.cuantime.es/assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
     
-    <link href="//app.cuantime.ml/assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css">
-    <link href="//app.cuantime.ml/assets/libs/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet">
-    <link href="//app.cuantime.ml/assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
-    <link href="//app.cuantime.ml/assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet">
-    <link href="//app.cuantime.ml/assets/libs/bootstrap-editable/css/bootstrap-editable.css" rel="stylesheet">
+    <link href="//app.cuantime.es/assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css">
+    <link href="//app.cuantime.es/assets/libs/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+    <link href="//app.cuantime.es/assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
+    <link href="//app.cuantime.es/assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet">
+    <link href="//app.cuantime.es/assets/libs/bootstrap-editable/css/bootstrap-editable.css" rel="stylesheet">
     <!-- CSS Custom -->
     <link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
     <link rel="stylesheet" type="text/css" href="css/responsive.css" media="screen">
@@ -55,8 +55,8 @@ include_once("sections/cookies.php");
 <?php include_once("sections/footer.php") ?>
 
 <!-- JavaScripts basics -->
-<script src="//www.aldasoro.ml/admin/assets/libs/jquery/jquery.min.js"></script>
-<script src="//www.aldasoro.ml/admin/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="//app.cuantime.es/assets/libs/jquery/jquery.min.js"></script>
+<script src="//app.cuantime.es/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- JavaScripts custom -->
 <script src="js/script.js"></script>
 <!-- Scripts custom -->

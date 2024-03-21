@@ -4,9 +4,15 @@
 # ignore ALL files in ANY directory named ...
 .git/
 app/assests/
+app/conexiones/base-conexion.php
 app/conexiones/conexion.php
+app/conexiones/payment.php
+app/js/payment.js
 app/lib/
 app/stripe/
 app/vendor/
+app-v02/
+old/
+
 www/conexiones/conexion.php
 www/stripe/

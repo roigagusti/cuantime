@@ -14,7 +14,7 @@ include_once("sections/languages.php");
   <?php include_once("sections/meta.php"); ?>
 
   <!-- Títol i Favicons -->
-  <title>Cuantime. Inicia sesión</title>
+  <title>Cuantime. <?php echo $text['Inicia sesión'];?></title>
 
   <!-- CSS Libraries -->
   <!-- CSS Custom -->
@@ -35,32 +35,32 @@ include_once("sections/languages.php");
 
 
     <div class="box box-login box-shadow">
-      <div class="forgot-notice">Introduce la dirección de correo electrónico asociada a tu cuenta y te enviaremos un vínculo para restablecer tu contraseña.</div>
+      <div class="forgot-notice"><?php echo $text['Introduce la dirección de correo electrónico asociada a tu cuenta y te enviaremos un vínculo para restablecer tu contraseña'];?>.</div>
 
       <form class="form-signin" action="conexiones/sendmail.php?type=forgot" method="post">
         <div class="login-input">
-          <label for="email">Correo electrónico</label>
+          <label for="email"><?php echo $text['Correo electrónico'];?></label>
           <input type="text" id="email" name="email" required>
         </div>
 
         <div class="submit-zone">
-          <button class="btn-access" type="submit">Continuar</button>
+          <button class="btn-access" type="submit"><?php echo $text['Continuar'];?></button>
         </div>
       </form>
     </div>
 
 
     <div class="alert-zone">
-      <div class="register">¿Tienes una cuenta? <a href="login.php?lang=<?php echo $text['lang']; ?>">Inicia sesión</a><br>
-      ¿Aún no tienes una cuenta? <a href="register.php?lang=<?php echo $text['lang']; ?>">Crear cuenta</a></div>
+      <div class="register"><?php echo $text['¿Tienes una cuenta?'];?> <a href="login.php?lang=<?php echo $text['lang']; ?>"><?php echo $text['Inicia sesión'];?></a><br>
+      <?php echo $text['¿Aún no tienes una cuenta?'];?> <a href="register.php?lang=<?php echo $text['lang']; ?>"><?php echo $text['Crear cuenta'];?></a></div>
     </div>
 
   </div>
 </div>
 <div class="footer">
   <a href="/">© Cuantime</a>
-  <a href="#">Contacto</a>
-  <a href="legal.php">Privacidad y condiciones</a>
+  <a href="#"><?php echo $text['Contacto'];?></a>
+  <a href="legal.php"><?php echo $text['Privacidad y condiciones'];?></a>
 </div>
 <!-- JavaScripts basics -->
 <script src="assets/libs/jquery/jquery.min.js"></script>

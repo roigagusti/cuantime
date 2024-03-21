@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title mt-0" id="myModalLabel">Añadir tarea</h5>
+                <h5 class="modal-title mt-0" id="myModalLabel"><?php echo $text['Añadir tarea'];?></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -13,7 +13,7 @@
                     <div class="row">
                         <div class="col-lg-8">
                             <div class="form-group">
-                                <label class="control-label">Proyecto</label>
+                                <label class="control-label"><?php echo $text['Proyecto'];?></label>
                                 <select class="form-control" name="proyecto" required>
                                     <?php if($pagina=='expedient-detall'){
                                         echo '<option value="'.$_GET['id'].'">'.$projecteExp.'. '.$projecteNom.'</option>';
@@ -37,12 +37,12 @@
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <label>Prioridad</label>
+                                <label><?php echo $text['Prioridad'];?></label>
                                 <select class="form-control" name="prioridad">
-                                    <option value="0">Sin prisa</option>
-                                    <option value="1">Tener en cuenta</option>
-                                    <option value="2">Manos a la obra</option>
-                                    <option value="3">Urgente</option>
+                                    <option value="0"><?php echo $text['Sin prisa'];?></option>
+                                    <option value="1"><?php echo $text['Tener en cuenta'];?></option>
+                                    <option value="2"><?php echo $text['Manos a la obra'];?></option>
+                                    <option value="3"><?php echo $text['Urgente'];?></option>
                                 </select>
                             </div>
                         </div>

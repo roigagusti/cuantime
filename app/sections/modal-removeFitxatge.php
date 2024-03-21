@@ -9,7 +9,7 @@
             </div>
             <form method="post" action="conexiones/administracio.php?action=removeFitxatge<?php echo '$id='.$_GET['id'].'&dia='.$_GET['dia'];?>" >
                 <div class="modal-body">
-                    <p>¿Estás seguro que quieres borrar este fichaje?</a></p>
+                    <p><?php echo $text['¿Estás seguro que quieres borrar este fichaje?'];?></a></p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light waves-effect" data-dismiss="modal">Cancelar</button>

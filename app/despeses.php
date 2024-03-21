@@ -21,7 +21,7 @@ function trimestre($datetime){
     <?php include_once("sections/meta.php") ?>
 
     <!-- Títol i Favicons -->
-    <title>Cuantime. Gastos</title>
+    <title>Cuantime. <?php echo $text['Gastos'];?></title>
 
     <!-- CSS Libraries -->
     <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -53,12 +53,12 @@ function trimestre($datetime){
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0">Gastos</h4>
+                                <h4 class="mb-0"><?php echo $text['Gastos'];?></h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                     <li class="breadcrumb-item"><a href="index.php">Cuantime</a></li>
-                                    <li class="breadcrumb-item active">Gastos</li>
+                                    <li class="breadcrumb-item active"><?php echo $text['Gastos'];?></li>
                                     </ol>
                                 </div>
 
@@ -75,7 +75,7 @@ function trimestre($datetime){
                     <div class="row">
                         <div class="col-md-4">
                             <div>
-                                <button type="button" class="btn btn-success waves-effect waves-light mb-3" data-toggle="modal" data-target="#addDespesa"><i class="mdi mdi-plus mr-1"></i> Nuevo gasto</button>
+                                <button type="button" class="btn btn-success waves-effect waves-light mb-3" data-toggle="modal" data-target="#addDespesa"><i class="mdi mdi-plus mr-1"></i> <?php echo $text['Nuevo gasto'];?></button>
                             </div>
                         </div>
                         <div class="col-lg-12">
@@ -95,23 +95,23 @@ function trimestre($datetime){
                                       "proveidor"
                                     ],["idUser"=>$userAdminEmpresa,"ORDER"=>["data"=>"DESC"]]);
                                     $numDespesesToUser=count($despeses);
-                                    if($numDespesesToUser==0){echo "<span style='color:#999'>Aun no se ha añadido ningún gasto</span>";}else{
+                                    if($numDespesesToUser==0){echo "<span style='color:#999'>".$text['Aun no se ha añadido ningún gasto']."</span>";}else{
                                     ?>
 
                                     <div class="table-responsive" style="min-height:300px">
                                         <table class="table table-centered table-nowrap mb-0">
                                             <thead class="thead-light">
                                                 <tr>
-                                                    <th class="text-center" style="width:50px">Año</th>
-                                                    <th class="text-center" style="width:50px">Trimestre</th>
-                                                    <th class="text-center" style="width:100px">Fecha</th>
-                                                    <th>Concepto</th>
-                                                    <th>Proveedor</th>
-                                                    <th style="width:100px">Importe</th>
+                                                    <th class="text-center" style="width:50px"><?php echo $text['Año'];?></th>
+                                                    <th class="text-center" style="width:50px"><?php echo $text['Trimestre'];?></th>
+                                                    <th class="text-center" style="width:100px"><?php echo $text['Fecha'];?></th>
+                                                    <th><?php echo $text['Concepto'];?></th>
+                                                    <th><?php echo $text['Proveedor'];?></th>
+                                                    <th style="width:100px"><?php echo $text['Importe'];?></th>
                                                     <th style="width:100px">IVA</th>
                                                     <th style="width:100px">IRPF</th>
-                                                    <th style="width:100px">Cobrado</th>
-                                                    <th>Proyecto</th>
+                                                    <th style="width:100px"><?php echo $text['Cobrado'];?></th>
+                                                    <th><?php echo $text['Proyecto'];?></th>
                                                     <th style="width:30px"></th>
                                                 </tr>
                                             </thead>

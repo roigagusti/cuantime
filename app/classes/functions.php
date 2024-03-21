@@ -7,6 +7,7 @@ function token($longitud) {
   for($i=0;$i < $longitud;$i++) $key .= $pattern{mt_rand(0,$max)};
   return $key;
 }
+
 function inicials($name){
     //Entro un nom complet i obtinc un nom paraula+espai+paraula.
     $trans = array("À"=>"A","Á"=>"A","È"=>"E","É"=>"E","Ì"=>"I","Í"=>"I","Ò"=>"O","Ó"=>"O","Ù"=>"U","Ú"=>"U");
@@ -14,7 +15,6 @@ function inicials($name){
     $inicials = strtoupper($nomWords[0][0].$nomWords[1][0]);
     return $inicials;
 }
-
 
 
 /* Beautifiers */
@@ -25,21 +25,21 @@ function beautyTime($time){
     if($minutsDiaris < 10){$minutsDiaris = "0".$minutsDiaris;}
     return $horesDiaries."h ".$minutsDiaris." min";
 }
+
 function beautyNameTwoWords($name){
     //Entro un nom complet i obtinc un nom paraula+espai+paraula.
     $firstWords=explode(' ',$name);
     return $firstWords[0].' '.$firstWords[1];
 }
+
 function beautyExp($num){
     $beauty = sprintf('%04d', $num);
     return $beauty;
 }
 
 
-
 /* Time format */ 
-function dateDistance($datetime)
-{
+function dateDistance($datetime){
   $strTime = array("segundos", "minutos", "horas", "días", "meses", "años");
   $length = array("60","60","24","30","12","10");
   $timestamp = strtotime($datetime);
@@ -56,7 +56,6 @@ function dateDistance($datetime)
 }
 
 
-
 /* Factures */
 function dni($a){
   if(ctype_alpha(substr($a,-1))&&!ctype_alpha($a[0])){
@@ -67,6 +66,7 @@ function dni($a){
       return $a;
   }
 }
+
 function iban($a){
   if(strlen($a)%4==0){
       $div=strlen($a)/4;

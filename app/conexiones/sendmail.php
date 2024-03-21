@@ -47,7 +47,7 @@ switch($_GET['type']){
 }
 
 // Enviem mail via API (api.enviaremail.ml)
-$url = 'https://api.enviaremail.ml';
+$url = 'https://sendemail.agustiroig.com';
 $ch = curl_init($url);
 
 $data = array(
@@ -65,11 +65,11 @@ $result = curl_exec($ch);
 $obj = json_decode($result);
 $emailSent = $obj->result->sent;
 curl_close($ch);
+print($result)
 
-
-if($emailSent == 1){
-  header('Location: '.$returnsuccess);
-}else{
-  header('Location: '.$returnfail);
-}
+// if($emailSent == 1){
+//   header('Location: '.$returnsuccess);
+// }else{
+//   header('Location: '.$returnfail);
+// }
 ?>

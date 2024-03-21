@@ -52,7 +52,7 @@
                 </div>
                 <input type="file" class="hidden" name="addFile" id="addFile" max-size="5000">
                 <textarea rows="3" class="form-control border-0 resize-none" name="missatge" placeholder="Escribir mensaje..."></textarea>
-                <button type="submit" class="btn btn-success waves-effect waves-light mr-1">Enviar</button>
+                <button type="submit" class="btn btn-success waves-effect waves-light mr-1"><?php echo $text['Enviar'];?></button>
             </form>
         </div> <!-- end .border-->
     </div>

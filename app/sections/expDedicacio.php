@@ -4,10 +4,10 @@
             <thead>
                 <tr>
                     <th scope="col" style="width:100px">#</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col" style="width:100px">Horas</th>
-                    <th scope="col" style="width:120px;" class="text-center">Asignación</th>
-                    <th scope="col" style="width:120px;">Ganancia</th>
+                    <th scope="col"><?php echo $text['Nombre'];?></th>
+                    <th scope="col" style="width:100px"><?php echo $text['Horas'];?></th>
+                    <th scope="col" style="width:120px;" class="text-center"><?php echo $text['Asignación'];?></th>
+                    <th scope="col" style="width:120px;"><?php echo $text['Ganancia'];?></th>
                 </tr>
             </thead>
             <tbody>

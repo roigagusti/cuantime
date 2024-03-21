@@ -30,7 +30,7 @@
             <!-- BUSCADOR -->
             <form class="app-search d-none d-lg-block" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
                 <div class="position-relative">
-                    <input type="text" class="form-control" name="searchQuery" placeholder="Buscar...">
+                    <input type="text" class="form-control" name="searchQuery" placeholder="<?php echo $text['Buscar'];?>...">
                 </div>
             </form>
         </div>
@@ -113,8 +113,8 @@
                     <i class="uil-angle-down d-none d-xl-inline-block font-size-15"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item d-block" href="perfil.php"><span class="align-middle">Configuración</span>
-                    <a class="dropdown-item" href="conexiones/logout.php"><span class="align-middle">Cerrar sesión</span></a>
+                    <a class="dropdown-item d-block" href="perfil.php"><span class="align-middle"><?php echo $text['Configuración'];?></span>
+                    <a class="dropdown-item" href="conexiones/logout.php"><span class="align-middle"><?php echo $text['Cerrar sesión'];?></span></a>
                 </div>
             </div>
 

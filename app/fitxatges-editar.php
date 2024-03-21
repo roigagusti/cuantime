@@ -15,14 +15,12 @@ function beautyTime($time){
     if($minutsDiaris < 10){$minutsDiaris = "0".$minutsDiaris;}
     return $horesDiaries."h ".$minutsDiaris." min";
 }
-function beautyDate(){
+function beautyDate($dies,$mes){
     //Entro un valor en "dd-mm-aaaa" i em retorna en format "Dilluns, 01 Febrer".
     $dia = $_GET['dia'];
-    $diesSetmana = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
-    $mes = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Deciembre'];
     $values = explode("-",$dia);
 
-    $diaSetmana = $diesSetmana[date('w', strtotime($dia))];
+    $diaSetmana = $dies[date('w', strtotime($dia))];
     $a = $values[0];
     $b = $mes[intval($values[1])-1];
     return $diaSetmana.', '.$a.' de '.$b;
@@ -35,7 +33,7 @@ function beautyDate(){
     <?php include_once("sections/meta.php") ?>
 
     <!-- Títol i Favicons -->
-    <title>Cuantime. Fichajes</title>
+    <title>Cuantime. <?php echo $text['Fichajes'];?></title>
 
     <!-- CSS Libraries -->
     <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -85,13 +83,13 @@ function beautyDate(){
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0">Editar dedicación</h4>
+                                <h4 class="mb-0"><?php echo $text['Editar dedicación'];?></h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                     <li class="breadcrumb-item"><a href="index.php">Cuantime</a></li>
-                                    <li class="breadcrumb-item"><a href="fitxatges.php">Fichajes</a></li>
-                                    <li class="breadcrumb-item active">Editar dedicación</li>
+                                    <li class="breadcrumb-item"><a href="fitxatges.php"><?php echo $text['Fichajes'];?></a></li>
+                                    <li class="breadcrumb-item active"><?php echo $text['Editar dedicación'];?></li>
                                     </ol>
                                 </div>
 
@@ -108,7 +106,7 @@ function beautyDate(){
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-8">
-                                            <a class="text-body" href="#"><strong><?php echo beautyDate();?></strong></a>
+                                            <a class="text-body" href="#"><strong><?php echo beautyDate($diesSetmana,$month);?></strong></a>
                                         </div>
                                         <div class="col-md-4 text-right">
                                             <?php
@@ -121,7 +119,7 @@ function beautyDate(){
                                     </div>
                                     <div style="margin-top:20px;">
                                         <?php
-                                        if($numFitxatgesToUser==0){echo '<div style="color:#ccc;">No hay fichajes</div>';}else{
+                                        if($numFitxatgesToUser==0){echo '<div style="color:#ccc;">'.$text['No hay fichajes'].'</div>';}else{
                                         foreach($fitxatges as $fitxatge){
                                             if($fitxatge['timeOut']==NULL){
                                                 $fitxatgeTimeOut = '<span style="color:#ccc">...</span>';
@@ -159,7 +157,7 @@ function beautyDate(){
                             <div class="row my-4">
                                 <div class="col">
                                     <a href="fitxatges.php" class="btn btn-link text-muted">
-                                        <i class="uil uil-arrow-left mr-1"></i> Volver a fichajes</a>
+                                        <i class="uil uil-arrow-left mr-1"></i> <?php echo $text['Volver a fichajes'];?></a>
                                 </div> <!-- end col -->
                             </div> 
                         </div>
@@ -174,8 +172,8 @@ function beautyDate(){
                                                     <i class="uil uil-clock-nine text-primary h2"></i>
                                                 </div>
                                                 <div class="media-body overflow-hidden">
-                                                    <h5 class="font-size-16 mb-1">Fichajes</h5>
-                                                    <p class="text-muted text-truncate mb-0">Clica para editar los fichajes diarios</p>
+                                                    <h5 class="font-size-16 mb-1"><?php echo $text['Fichajes'];?></h5>
+                                                    <p class="text-muted text-truncate mb-0"><?php echo $text['Clica para editar los fichajes diarios'];?></p>
                                                 </div>
                                                 <i class="mdi mdi-chevron-up accor-down-icon font-size-24"></i>
                                             </div>
@@ -187,7 +185,7 @@ function beautyDate(){
                                         <div class="p-4 border-top">
                                             <?php
                                             $i=1;
-                                            if(count($fitxatges)==0){echo '<div style="color:#ccc;">No hay fichajes</div>';}
+                                            if(count($fitxatges)==0){echo '<div style="color:#ccc;">'.$text['No hay fichajes'].'</div>';}
                                             foreach($fitxatges as $fitxatge){ 
                                                 if($fitxatge['timeOut']==NULL){
                                                     $fitxatgeTimeOut = '<span style="color:#ccc">...</span>';
@@ -201,7 +199,7 @@ function beautyDate(){
                                                         <i class="fitxatge-icon uil-clock-nine"></i> 
                                                         <?php echo date("H:i",strtotime($fitxatge['timeIn']))." - ".$fitxatgeTimeOut;?>
                                                     </a>
-                                                    <span style="float:right"><a href="#" data-toggle="modal" data-target="#removeFitxatge" style="color:#999">Eliminar</a></span>
+                                                    <span style="float:right"><a href="#" data-toggle="modal" data-target="#removeFitxatge" style="color:#999"><?php echo $text['Eliminar'];?></a></span>
                                                 </div>
                                             </div>
                                             <div class="collapse" id="collapseFitxatge<?php echo $i;?>" style="margin-top:20px;">
@@ -210,18 +208,18 @@ function beautyDate(){
                                                         <div class="row">
                                                             <div class="col-lg-4">
                                                                 <div class="form-group mb-4">
-                                                                    <label>Hora de inicio</label>
+                                                                    <label><?php echo $text['Hora de inicio'];?></label>
                                                                     <input type="time" class="form-control" data-date-format="hh:mm" data-date-autoclose="true" id="example-time-input" value="<?php echo date("H:i",strtotime($fitxatge['timeIn']));?>" name="iniciHora">
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-4">
                                                                 <div class="form-group mb-4">
-                                                                    <label>Hora final</label>
+                                                                    <label><?php echo $text['Hora final'];?></label>
                                                                     <input type="time" class="form-control" data-date-format="hh:mm" data-date-autoclose="true" id="example-time-input" value="<?php echo date("H:i",strtotime($fitxatge['timeOut']));?>" name="finalHora">
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-4" style="text-align: right;padding-top:25px">
-                                                                <button type="submit" class="btn btn-success">Guardar</button>
+                                                                <button type="submit" class="btn btn-success"><?php echo $text['Guardar'];?></button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -231,18 +229,18 @@ function beautyDate(){
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h5 class="modal-title mt-0" id="myModalLabel">Confirmar borrado</h5>
+                                                            <h5 class="modal-title mt-0" id="myModalLabel"><?php echo $text['Confirmar borrado'];?></h5>
                                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
                                                         </div>
                                                         <form method="post" action="conexiones/rrhh.php?action=removeFitxatge<?php echo '&id='.$fitxatge['id'].'&dia='.$_GET['dia'];?>" >
                                                             <div class="modal-body">
-                                                                <p>¿Estás seguro que quieres borrar este fichaje?</a></p>
+                                                                <p><?php echo $text['¿Estás seguro que quieres borrar este fichaje?'];?></a></p>
                                                             </div>
                                                             <div class="modal-footer">
-                                                                <button type="button" class="btn btn-light waves-effect" data-dismiss="modal">Cancelar</button>
-                                                                <button type="submit" class="btn btn-danger waves-effect waves-light">Borrar</button>
+                                                                <button type="button" class="btn btn-light waves-effect" data-dismiss="modal"><?php echo $text['Cancelar'];?></button>
+                                                                <button type="submit" class="btn btn-danger waves-effect waves-light"><?php echo $text['Borrar'];?></button>
                                                             </div>
                                                         </form>
                                                     </div><!-- /.modal-content -->
@@ -252,7 +250,7 @@ function beautyDate(){
                                         </div>
                                     </div>
 
-                                    <div class="row"><div class="col-md-12"><button type="button" class="btn btn-outline-success waves-effect waves-light mb-3" data-toggle="modal" data-target="#addFitxatge" style="margin-left: 20px;"><i class="mdi mdi-plus mr-1"></i> Añadir fichaje</button></div></div>
+                                    <div class="row"><div class="col-md-12"><button type="button" class="btn btn-outline-success waves-effect waves-light mb-3" data-toggle="modal" data-target="#addFitxatge" style="margin-left: 20px;"><i class="mdi mdi-plus mr-1"></i> <?php echo $text['Añadir fichaje'];?></button></div></div>
                                 </div>
 
                                 <div class="card">
@@ -264,8 +262,8 @@ function beautyDate(){
                                                     <i class="uil uil-folder text-primary h2"></i>
                                                 </div>
                                                 <div class="media-body overflow-hidden">
-                                                    <h5 class="font-size-16 mb-1">Dedicación</h5>
-                                                    <p class="text-muted text-truncate mb-0">Clica para editar la dedicación diaria</p>
+                                                    <h5 class="font-size-16 mb-1"><?php echo $text['Dedicación'];?></h5>
+                                                    <p class="text-muted text-truncate mb-0"><?php echo $text['Clica para editar la dedicación diaria'];?></p>
                                                 </div>
                                                 <i class="mdi mdi-chevron-up accor-down-icon font-size-24"></i>
                                             </div>
@@ -277,7 +275,7 @@ function beautyDate(){
                                         <div class="p-4 border-top">
                                             <?php
                                             $j=1;
-                                            if(count($partes)==0){echo '<div style="color:#ccc;">No hay dedicación</div>';}
+                                            if(count($partes)==0){echo '<div style="color:#ccc;">'.$text['No hay dedicación'].'</div>';}
                                             foreach($partes as $parte){
                                             $expProject = $database->get("projectes","exp",["id"=>$parte['idProjecte']]);
                                             $nomProject = $database->get("projectes","nom",["id"=>$parte['idProjecte']]);
@@ -285,7 +283,7 @@ function beautyDate(){
                                             <div class="row">
                                                 <div class="col-lg-12 mt-3">
 
-                                                    <a class="text-body" data-toggle="collapse" href="#collapseParte<?php echo $j;?>" aria-expanded="true" aria-controls="collapseParte<?php echo $j;?>"><i class="fitxatge-icon uil-folder"></i> <span style="color: #34c38f;"><?php echo round($parte['percentatge'],0).'%</span> - '.$expProject.'. '.$nomProject.' <span style="color:#999;">'.$parte['comment'];?></span></a> <span style="float:right"><a href="#" data-toggle="modal" data-target="#removeParte<?php echo $j;?>" style="color:#999">Eliminar</a></span>
+                                                    <a class="text-body" data-toggle="collapse" href="#collapseParte<?php echo $j;?>" aria-expanded="true" aria-controls="collapseParte<?php echo $j;?>"><i class="fitxatge-icon uil-folder"></i> <span style="color: #34c38f;"><?php echo round($parte['percentatge'],0).'%</span> - '.$expProject.'. '.$nomProject.' <span style="color:#999;">'.$parte['comment'];?></span></a> <span style="float:right"><a href="#" data-toggle="modal" data-target="#removeParte<?php echo $j;?>" style="color:#999"><?php echo $text['Eliminar'];?></a></span>
 
                                                     <div class="collapse" id="collapseParte<?php echo $j;?>" style="margin-top:20px;">
                                                         <form method="post" action="conexiones/rrhh.php?action=updateParte<?php echo '&dia='.$_GET['dia'].'&id='.$parte['id'];?>">
@@ -293,13 +291,13 @@ function beautyDate(){
                                                                 <div class="row">
                                                                     <div class="col-lg-2">
                                                                         <div class="form-group mb-4">
-                                                                            <label>Dedicación (%)</label>
+                                                                            <label><?php echo $text['Dedicación'];?> (%)</label>
                                                                             <input type="text" class="form-control" value="<?php echo $parte['percentatge'];?>" name="partePercentatge">
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-lg-4">
                                                                         <div class="form-group mb-4">
-                                                                            <label>Proyecto</label>
+                                                                            <label><?php echo $text['Proyecto'];?></label>
                                                                             <select class="form-control" name="idProjecte">
                                                                             <option value="<?php echo $parte['idProjecte'];?>"><?php echo $expProject.'. '.$nomProject;?></option>
                                                                             <?php
@@ -321,12 +319,12 @@ function beautyDate(){
                                                                     </div>
                                                                     <div class="col-lg-4">
                                                                         <div class="form-group mb-4">
-                                                                            <label>Comentario</label>
+                                                                            <label><?php echo $text['Comentario'];?></label>
                                                                             <input type="text" class="form-control" value="<?php echo $parte['comment'];?>" name="parteComentari">
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-lg-2" style="text-align: right;padding-top:25px">
-                                                                        <button type="submit" class="btn btn-success">Guardar</button>
+                                                                        <button type="submit" class="btn btn-success"><?php echo $text['Guardar'];?></button>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -336,18 +334,18 @@ function beautyDate(){
                                                         <div class="modal-dialog">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
-                                                                    <h5 class="modal-title mt-0" id="myModalLabel">Confirmar borrado</h5>
+                                                                    <h5 class="modal-title mt-0" id="myModalLabel"><?php echo $text['Confirmar borrado'];?></h5>
                                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                         <span aria-hidden="true">&times;</span>
                                                                     </button>
                                                                 </div>
                                                                 <form method="post" action="conexiones/rrhh.php?action=removeParte<?php echo '&id='.$parte['id'].'&dia='.$_GET['dia'];?>" >
                                                                     <div class="modal-body">
-                                                                        <p>¿Estás seguro que quieres borrar esta dedicación?</a></p>
+                                                                        <p><?php echo $text['¿Estás seguro que quieres borrar esta dedicación?'];?></a></p>
                                                                     </div>
                                                                     <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-light waves-effect" data-dismiss="modal">Cancelar</button>
-                                                                        <button type="submit" class="btn btn-danger waves-effect waves-light">Borrar</button>
+                                                                        <button type="button" class="btn btn-light waves-effect" data-dismiss="modal"><?php echo $text['Cancelar'];?></button>
+                                                                        <button type="submit" class="btn btn-danger waves-effect waves-light"><?php echo $text['Borrar'];?></button>
                                                                     </div>
                                                                 </form>
                                                             </div><!-- /.modal-content -->
@@ -359,7 +357,7 @@ function beautyDate(){
                                         </div>
                                     </div>
 
-                                    <div class="row"><div class="col-md-12"><button type="button" class="btn btn-outline-success waves-effect waves-light mb-3" data-toggle="modal" data-target="#addParte" onclick="<?php echo "dataOnValue('".$parteData."')";?>" style="margin-left: 20px;"><i class="mdi mdi-plus mr-1"></i> Añadir dedicación</button></div></div>
+                                    <div class="row"><div class="col-md-12"><button type="button" class="btn btn-outline-success waves-effect waves-light mb-3" data-toggle="modal" data-target="#addParte" onclick="<?php echo "dataOnValue('".$parteData."')";?>" style="margin-left: 20px;"><i class="mdi mdi-plus mr-1"></i> <?php echo $text['Añadir dedicación'];?></button></div></div>
                                 </div>
                                 
                             </div>

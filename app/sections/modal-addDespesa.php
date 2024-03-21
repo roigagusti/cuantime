@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title mt-0" id="myModalLabel">Añadir gasto</h5>
+                <h5 class="modal-title mt-0" id="myModalLabel"><?php echo $text['Añadir gasto'];?></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -13,7 +13,7 @@
                     <div class="row">
                         <div class="col-lg-5">
                             <div class="form-group">
-                                <label>Fecha gasto</label>
+                                <label><?php echo $text['Fecha'];?></label>
                                 <div class="input-group">
                                     <input type="text" class="form-control" data-provide="datepicker" data-date-format="yyyy/mm/dd" data-date-autoclose="true" value="<?php echo date('Y-m-d');?>" name="despesaData">
                                     <div class="input-group-append">
@@ -24,9 +24,9 @@
                         </div>
                         <div class="col-lg-7">
                             <div class="form-group">
-                                <label class="control-label">Repercusión a</label>
+                                <label class="control-label"><?php echo $text['Repercusión a'];?></label>
                                 <select class="form-control" name="idProjecte" required>
-                                    <option>General</option>
+                                    <option><?php echo $text['General'];?></option>
                                     <?php 
                                     $projectes = $database->select("projectes", [
                                         "id",
@@ -51,7 +51,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="form-group">
-                                <label>Concepto</label>
+                                <label><?php echo $text['Concepto'];?></label>
                                 <input type="text" class="form-control" name="despesaConcepte">
                             </div>
                         </div>
@@ -59,13 +59,13 @@
                     <div class="row">
                         <div class="col-lg-10">
                             <div class="form-group">
-                                <label>Proveedor</label>
+                                <label><?php echo $text['Proveedor'];?></label>
                                 <input type="text" class="form-control" name="despesaProveidor">
                             </div>
                         </div>
                         <div class="col-lg-2">
                             <div class="form-group">
-                                <label>Importe</label>
+                                <label><?php echo $text['Importe'];?></label>
                                 <input type="text" onchange="calculPreu()" class="form-control facturaValors" name="despesaImport" id="facturaImport" required>
                             </div>
                         </div>
@@ -94,17 +94,17 @@
                         </div>
                     </div>
 
-                    <p class="impMod" onclick="showImpost()" style="cursor:pointer;color:#34c38f;">Modificar impuestos</p>
-                    <p class="impAma hidden" onclick="showImpost()" style="cursor:pointer;color:#34c38f;">Esconder impuestos</p>
+                    <p class="impMod" onclick="showImpost()" style="cursor:pointer;color:#34c38f;"><?php echo $text['Modificar impuestos'];?></p>
+                    <p class="impAma hidden" onclick="showImpost()" style="cursor:pointer;color:#34c38f;"><?php echo $text['Esconder impuestos'];?></p>
                     <div class="impAma hidden">
                         <div class="row">
-                            <div class="col-lg-6">Porcentaje de IVA</div>
+                            <div class="col-lg-6"><?php echo $text['Porcentaje de'];?> IVA</div>
                             <div class="col-lg-6">
                                 <input type="text" onchange="calculPreu()" class="form-control text-right" name="despesaIVA" id="facturaIVA" value="21">
                             </div>
                         </div>
                         <div class="row" style="margin-top:5px;margin-bottom: 10px">
-                            <div class="col-lg-6">Porcentaje de IRPF</div>
+                            <div class="col-lg-6"><?php echo $text['Porcentaje de'];?> IRPF</div>
                             <div class="col-lg-6">
                                 <input type="text" onchange="calculPreu()" class="form-control text-right" name="despesaIRPF" id="facturaIRPF" value="0">
                             </div>
@@ -113,14 +113,14 @@
 
                     <div class="custom-control custom-switch mb-3" dir="ltr">
                         <input type="checkbox" class="custom-control-input" id="customSwitch1" name="checkHoraFinal">
-                        <label class="custom-control-label" for="customSwitch1">Añadir datos de facturación</label>
+                        <label class="custom-control-label" for="customSwitch1"><?php echo $text['Añadir datos de facturación'];?></label>
                     </div>
 
                     <div class="hidden" id="horaFinal">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <label>Nombre</label>
+                                    <label><?php echo $text['Nombre'];?></label>
                                     <div class="input-group">
                                         <input type="text" class="form-control" placeholder="Richard Hendricks" name="despesaNom">
                                     </div>
@@ -130,7 +130,7 @@
                         <div class="row">
                             <div class="col-lg-8">
                                 <div class="form-group">
-                                    <label>Dirección</label>
+                                    <label><?php echo $text['Dirección'];?></label>
                                     <div class="input-group">
                                         <input type="text" class="form-control" placeholder="Hacker Way 1" name="despesaDireccio">
                                     </div>
@@ -138,7 +138,7 @@
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group">
-                                    <label>Código postal</label>
+                                    <label><?php echo $text['Código postal'];?></label>
                                     <div class="input-group">
                                         <input type="number" class="form-control" placeholder="94025" name="despesaCP">
                                     </div>
@@ -149,7 +149,7 @@
                         <div class="row">
                             <div class="col-lg-4">
                                 <div class="form-group">
-                                    <label>Ciudad</label>
+                                    <label><?php echo $text['Ciudad'];?></label>
                                     <div class="input-group">
                                         <input type="text" class="form-control" placeholder="Menlo Park" name="despesaCiutat">
                                     </div>
@@ -157,7 +157,7 @@
                             </div>
                             <div class="col-lg-3">
                                 <div class="form-group">
-                                    <label>CIF</label>
+                                    <label><?php echo $text['CIF'];?></label>
                                     <div class="input-group">
                                         <input type="text" class="form-control" placeholder="48650373Z" name="despesaCIF">
                                     </div>
@@ -165,7 +165,7 @@
                             </div>
                             <div class="col-lg-5">
                                 <div class="form-group">
-                                    <label>Teléfono</label>
+                                    <label><?php echo $text['Teléfono'];?></label>
                                     <div class="input-group">
                                         <input type="phone" class="form-control" placeholder="+34654131563" name="despesaTelefon">
                                     </div>
@@ -176,7 +176,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <label>Email</label>
+                                    <label><?php echo $text['Email'];?></label>
                                     <div class="input-group">
                                         <input type="email" class="form-control" placeholder="richard@piedpiper.com" name="despesaEmail">
                                     </div>
@@ -187,8 +187,8 @@
                         
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-light waves-effect" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-primary waves-effect waves-light">Crear</button>
+                    <button type="button" class="btn btn-light waves-effect" data-dismiss="modal"><?php echo $text['Cancelar'];?></button>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light"><?php echo $text['Crear'];?></button>
                 </div>
             </form>
         </div><!-- /.modal-content -->

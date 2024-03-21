@@ -4,9 +4,9 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Usuario</th>
-                    <th scope="col">Título</th>
-                    <th scope="col">Nombre de archivo</th>
+                    <th scope="col"><?php echo $text['Usuario'];?></th>
+                    <th scope="col"><?php echo $text['Título'];?></th>
+                    <th scope="col"><?php echo $text['Nombre de archivo'];?></th>
                     <th scope="col"></th>
                 </tr>
             </thead>

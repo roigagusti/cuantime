@@ -197,3 +197,6 @@ footer{
     text-align:center;
     margin-top:60px;
 }
+#scispace-extension-root{
+	display: none;
+}

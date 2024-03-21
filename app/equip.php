@@ -30,7 +30,7 @@ function inicials($name){
     <?php include_once("sections/meta.php") ?>
 
     <!-- Títol i Favicons -->
-    <title>Cuantime. Equipo</title>
+    <title>Cuantime. <?php echo $text['Equipo'];?></title>
 
     <!-- CSS Libraries -->
     <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -66,12 +66,12 @@ function inicials($name){
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0">Equipo</h4>
+                                <h4 class="mb-0"><?php echo $text['Equipo'];?></h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                     <li class="breadcrumb-item"><a href="index.php">Cuantime</a></li>
-                                    <li class="breadcrumb-item active">Equipo</li>
+                                    <li class="breadcrumb-item active"><?php echo $text['Equipo'];?></li>
                                     </ol>
                                 </div>
 
@@ -86,7 +86,7 @@ function inicials($name){
                         <div class="col-md-4">
                             <?php if($userType<1){?>
                             <div>
-                                <button type="button" class="btn btn-success waves-effect waves-light mb-3" data-toggle="modal" data-target="#addPeople"><i class="mdi mdi-plus mr-1"></i> Nueva persona</button>
+                                <button type="button" class="btn btn-success waves-effect waves-light mb-3" data-toggle="modal" data-target="#addPeople"><i class="mdi mdi-plus mr-1"></i> <?php echo $text['Nueva persona'];?></button>
                             </div>
                             <?php }?>
                         </div>
@@ -112,15 +112,15 @@ function inicials($name){
                                         <table class="table table-centered table-nowrap mb-0">
                                             <thead class="thead-light">
                                                 <tr>
-                                                    <th scope="col">Nombre</th>
-                                                    <th scope="col">Empresa</th>
-                                                    <th scope="col">Email</th>
-                                                    <th scope="col">Estado</th>
-                                                    <th scope="col">Usuario</th>
-                                                    <th scope="col">Colaboración</th>
-                                                    <th scope="col" style="text-align: center;">Sueldo anual</th>
-                                                    <th scope="col" style="text-align: center;">Horario</th>
-                                                    <th scope="col" style="text-align: center;">Coste</th>
+                                                    <th scope="col"><?php echo $text['Nombre'];?></th>
+                                                    <th scope="col"><?php echo $text['Empresa'];?></th>
+                                                    <th scope="col"><?php echo $text['Email'];?></th>
+                                                    <th scope="col"><?php echo $text['Estado'];?></th>
+                                                    <th scope="col"><?php echo $text['Usuario'];?></th>
+                                                    <th scope="col"><?php echo $text['Colaboración'];?></th>
+                                                    <th scope="col" style="text-align: center;"><?php echo $text['Sueldo anual'];?></th>
+                                                    <th scope="col" style="text-align: center;"><?php echo $text['Horario'];?></th>
+                                                    <th scope="col" style="text-align: center;"><?php echo $text['Coste'];?></th>
                                                     <th></th>
                                                 </tr>
                                             </thead>
@@ -176,10 +176,10 @@ function inicials($name){
                                                                 </a>
                                                                 <div class="dropdown-menu dropdown-menu-right">
                                                                     <a class="dropdown-item" href="conexiones/rrhh.php?action=editUserType&type=1&id=<?php echo $persona['id'];?>">
-                                                                        Acceso completo
+                                                                        <?php echo $text['Acceso completo'];?>
                                                                     </a>
                                                                     <a class="dropdown-item" href="conexiones/rrhh.php?action=editUserType&type=2&id=<?php echo $persona['id'];?>">
-                                                                        Acceso básico
+                                                                        <?php echo $text['Acceso básico'];?>
                                                                     </a>
                                                                 </div>
                                                             </div>
@@ -192,10 +192,10 @@ function inicials($name){
                                                             </a>
                                                             <div class="dropdown-menu dropdown-menu-right">
                                                                 <a class="dropdown-item" href="conexiones/rrhh.php?action=editUserColab&type=0&id=<?php echo $persona['id'];?>">
-                                                                    Trabajador
+                                                                    <?php echo $text['Trabajador'];?>
                                                                 </a>
                                                                 <a class="dropdown-item" href="conexiones/rrhh.php?action=editUserColab&type=1&id=<?php echo $persona['id'];?>">
-                                                                    Autónomo
+                                                                    <?php echo $text['Autónomo'];?>
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -239,7 +239,7 @@ function inicials($name){
                                                         <td style="text-align: center;"><?php echo $cost;?></td>
                                                         <td style="width:100px">
                                                             <a href="calendari.php?id=<?php echo $persona['id'];?>" class="btn btn-light btn-sm w-xs">
-                                                                <i class="uil-calender"></i> Calendario
+                                                                <i class="uil-calender"></i> <?php echo $text['Calendario'];?>
                                                             </a>
                                                         </td>
 

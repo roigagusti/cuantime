@@ -1,12 +1,12 @@
 <?php
 $plans = array( 
     '1' => array( 
-        'name' => 'Manos a la obra', 
+        'name' => $text['Manos a la obra'], 
         'price' => 9.99, 
         'interval' => 'month' 
     ), 
     '2' => array( 
-        'name' => 'Profesional', 
+        'name' => $text['Profesional'], 
         'price' => 19.99, 
         'interval' => 'month' 
     )
@@ -22,7 +22,7 @@ define('STRIPE_PUBLISHABLE_KEY', 'pk_test_51IQ79SDzY9AsmTJ8Bq56HQ3XoV8axtwcgs73T
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title mt-0" id="myModalLabel">Actualizar suscripción</h5>
+                <h5 class="modal-title mt-0" id="myModalLabel"><?php echo $text['Actualizar suscripción'];?></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -41,13 +41,13 @@ define('STRIPE_PUBLISHABLE_KEY', 'pk_test_51IQ79SDzY9AsmTJ8Bq56HQ3XoV8axtwcgs73T
                                         break;
                                 }?>
                                 <div class="col-md offset-1 col-md-10 plaEA plan <?php echo $plan0;?>">
-                                    <a href="#"><div class="planTitle"><i class="uil uil-heart text-primary"></i><br><strong>Entre amigos.</strong> Plan inicial (0.00€/mes)</div></a>
+                                    <a href="#"><div class="planTitle"><i class="uil uil-heart text-primary"></i><br><strong><?php echo $text['Entre amigos'];?>.</strong> <?php echo $text['Plan inicial'];?> (0.00€/mes)</div></a>
                                 </div>
                                 <div class="col-md offset-1 col-md-10 plaMO plan <?php echo $plan1;?>">
-                                    <a href="#"><div class="planTitle"><i class="uil uil-laptop text-primary"></i><br><strong>Manos a la obra.</strong> Plan expansión (9.99€/mes)</div></a>
+                                    <a href="#"><div class="planTitle"><i class="uil uil-laptop text-primary"></i><br><strong><?php echo $text['Manos a la obra'];?>.</strong> <?php echo $text['Plan expansión'];?> (9.99€/mes)</div></a>
                                 </div>
                                 <div class="col-md offset-1 col-md-10 plaPR plan <?php echo $plan2;?>">
-                                    <a href="#"><div class="planTitle"><i class="uil uil-plane-fly text-primary"></i><br><strong>Profesional.</strong> Plan profesional (19.99€/mes)</div></a>
+                                    <a href="#"><div class="planTitle"><i class="uil uil-plane-fly text-primary"></i><br><strong><?php echo $text['Profesional'];?>.</strong> <?php echo $text['Plan profesional'];?> (19.99€/mes)</div></a>
                                 </div>
                             </div>
                             <input type="hidden" name="subscr_plan" id="subscr_plan" value="0">
@@ -58,24 +58,24 @@ define('STRIPE_PUBLISHABLE_KEY', 'pk_test_51IQ79SDzY9AsmTJ8Bq56HQ3XoV8axtwcgs73T
                                     <div id="paymentResponse"></div>
                                     <!-- Payment form -->
                                     <div class="form-group">
-                                        <label>Nombre de tarjeta</label><br>
+                                        <label><?php echo $text['Nombre de tarjeta'];?></label><br>
                                         <input type="text" name="name" id="name" class="field" placeholder="Gavin Belson" required="" autofocus="">
                                     </div>
                                     <input type="hidden" name="email" id="email" value="<?php echo $userEmail;?>">
                                     <div class="form-group">
-                                        <label>Número de tarjeta</label>
+                                        <label><?php echo $text['Número de tarjeta'];?></label>
                                         <div id="card_number" class="field"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label>Fecha de caducidad</label>
+                                                <label><?php echo $text['Fecha de caducidad'];?></label>
                                                 <div id="card_expiry" class="field"></div>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label>Código CVC</label>
+                                                <label><?php echo $text['Código CVC'];?></label>
                                                 <div id="card_cvc" class="field"></div>
                                             </div>
                                         </div>
@@ -87,8 +87,8 @@ define('STRIPE_PUBLISHABLE_KEY', 'pk_test_51IQ79SDzY9AsmTJ8Bq56HQ3XoV8axtwcgs73T
                 </div>                    
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-light waves-effect" data-dismiss="modal">Cancelar</button>
-                <button type="submit" id="payBtn" class="payment-button btn btn-primary waves-effect waves-light">Pagar</button>
+                <button type="button" class="btn btn-light waves-effect" data-dismiss="modal">Cancelar'];?></button>
+                <button type="submit" id="payBtn" class="payment-button btn btn-primary waves-effect waves-light">Pagar'];?></button>
             </div>
             </form>
         </div><!-- /.modal-content -->

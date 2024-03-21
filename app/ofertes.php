@@ -16,7 +16,7 @@ include_once("classes/functions.php");
     <?php include_once("sections/meta.php") ?>
 
     <!-- Títol i Favicons -->
-    <title>Cuantime. Ofertas</title>
+    <title>Cuantime. <?php echo $text['Ofertas'];?></title>
 
     <!-- CSS Libraries -->
     <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -52,12 +52,12 @@ include_once("classes/functions.php");
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0">Propuestas de honorarios</h4>
+                                <h4 class="mb-0"><?php echo $text['Propuestas de honorarios'];?></h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="index.php">Cuantime</a></li>
-                                        <li class="breadcrumb-item active">Ofertas</li>
+                                        <li class="breadcrumb-item active"><?php echo $text['Ofertas'];?></li>
                                     </ol>
                                 </div>
 
@@ -74,7 +74,7 @@ include_once("classes/functions.php");
                     <div class="row">
                         <div class="col-md-4">
                             <div>
-                                <button type="button" class="btn btn-success waves-effect waves-light mb-3" data-toggle="modal" data-target="#addOferta"><i class="mdi mdi-plus mr-1"></i> Nueva oferta</button>
+                                <button type="button" class="btn btn-success waves-effect waves-light mb-3" data-toggle="modal" data-target="#addOferta"><i class="mdi mdi-plus mr-1"></i> <?php echo $text['Nueva oferta'];?></button>
                             </div>
                         </div>
                         <div class="col-lg-12">
@@ -98,12 +98,12 @@ include_once("classes/functions.php");
                                         <table class="table table-centered table-nowrap mb-0">
                                             <thead class="thead-light">
                                                 <tr>
-                                                    <th style="width:100px">Número</th>
-                                                    <th class="text-center" style="width:100px">Estado</th>
-                                                    <th class="text-center" style="width:100px">Honorarios</th>
-                                                    <th>Proyecto</th>
-                                                    <th>Cliente</th>
-                                                    <th class="text-center" style="width:100px">Fecha</th>
+                                                    <th style="width:100px"><?php echo $text['Número'];?></th>
+                                                    <th class="text-center" style="width:100px"><?php echo $text['Estado'];?></th>
+                                                    <th class="text-center" style="width:100px"><?php echo $text['Honorarios'];?></th>
+                                                    <th><?php echo $text['Proyecto'];?></th>
+                                                    <th><?php echo $text['Cliente'];?></th>
+                                                    <th class="text-center" style="width:100px"><?php echo $text['Fecha'];?></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -114,7 +114,7 @@ include_once("classes/functions.php");
                                                 $clientNom = $database->get("clients","nom",["id"=>$clientId]);
                                                 $projecteNom = $database->get("projectes","nom",["id"=>$oferta['idProjecte']]);
                                                 $projecteCiutat = $database->get("projectes","ciutat",["id"=>$oferta['idProjecte']]);
-                                                $estat = ["Pendiente de honorarios","Espera de respuesta","No aceptado", "Aceptado","Facturado"];
+                                                $estat = [$text['Pendiente de honorarios'],$text['Espera de respuesta'],$text['No aceptado'],$text['Aceptado'],$text['Facturado']];
                                                 $badge = ["danger","warning","secondary","info","success"];
                                             ?>
 
@@ -127,19 +127,19 @@ include_once("classes/functions.php");
                                                             </a>
                                                             <div class="dropdown-menu dropdown-menu-right text-right">
                                                                 <a class="dropdown-item" href="conexiones/administracio.php?action=estatOferta&estat=1&id=<?php echo $oferta['id'];?>">
-                                                                    <span class="badge badge-pill badge-soft-danger font-size-12">Pendiente de honorarios</span>
+                                                                    <span class="badge badge-pill badge-soft-danger font-size-12"><?php echo $text['Pendiente de honorarios'];?></span>
                                                                 </a>
                                                                 <a class="dropdown-item" href="conexiones/administracio.php?action=estatOferta&estat=2&id=<?php echo $oferta['id'];?>">
-                                                                    <span class="badge badge-pill badge-soft-warning font-size-12">Espera de respuesta</span>
+                                                                    <span class="badge badge-pill badge-soft-warning font-size-12"><?php echo $text['Espera de respuesta'];?></span>
                                                                 </a>
                                                                 <a class="dropdown-item" href="conexiones/administracio.php?action=estatOferta&estat=3&id=<?php echo $oferta['id'];?>">
-                                                                    <span class="badge badge-pill badge-soft-secondary font-size-12">No aceptado</span>
+                                                                    <span class="badge badge-pill badge-soft-secondary font-size-12"><?php echo $text['No aceptado'];?></span>
                                                                 </a>
                                                                 <a class="dropdown-item" href="conexiones/administracio.php?action=estatOferta&estat=4&id=<?php echo $oferta['id'];?>">
-                                                                    <span class="badge badge-pill badge-soft-info font-size-12">Aceptado</span>
+                                                                    <span class="badge badge-pill badge-soft-info font-size-12"><?php echo $text['Aceptado'];?></span>
                                                                 </a>
                                                                 <a class="dropdown-item" href="conexiones/administracio.php?action=estatOferta&estat=5&id=<?php echo $oferta['id'];?>">
-                                                                    <span class="badge badge-pill badge-soft-success font-size-12">Facturado</span>
+                                                                    <span class="badge badge-pill badge-soft-success font-size-12"><?php echo $text['Facturado'];?></span>
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -176,7 +176,7 @@ include_once("classes/functions.php");
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title mt-0" id="myModalLabel">Editar oferta</h5>
+                            <h5 class="modal-title mt-0" id="myModalLabel"><?php echo $text['Editar oferta'];?></h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>

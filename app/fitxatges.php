@@ -30,7 +30,7 @@ $data = date('Y-m-d H:i:s');
     <?php include_once("sections/meta.php") ?>
 
     <!-- Títol i Favicons -->
-    <title>Cuantime. Fichajes</title>
+    <title>Cuantime. <?php echo $text['Fichajes'];?></title>
 
     <!-- CSS Libraries -->
     <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -62,12 +62,12 @@ $data = date('Y-m-d H:i:s');
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0">Fichajes</h4>
+                                <h4 class="mb-0"><?php echo $text['Fichajes'];?></h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="index.php">Cuantime</a></li>
-                                        <li class="breadcrumb-item active">Fichajes</li>
+                                        <li class="breadcrumb-item active"><?php echo $text['Fichajes'];?></li>
                                     </ol>
                                 </div>
 
@@ -89,7 +89,6 @@ $data = date('Y-m-d H:i:s');
                                     <div class="col-xs-12 col-lg-6 fitx-data-picker">
                                         <div class="form-group">
                                             <?php 
-                                            $month = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Deciembre'];
                                             $internMonth = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
                                             if(isset($_GET['date'])){
                                                 $dataExplotada=explode('-',$_GET['date']);
@@ -102,7 +101,7 @@ $data = date('Y-m-d H:i:s');
                                         </div>
                                     </div>
                                     <div class="col-xs-12 col-lg-3 add-fitxatge">
-                                        <button type="button" class="btn btn-outline-success btn-rounded waves-effect waves-light" data-toggle="modal" data-target="#addFitxatge">Añadir fichaje</button>
+                                        <button type="button" class="btn btn-outline-success btn-rounded waves-effect waves-light" data-toggle="modal" data-target="#addFitxatge"><?php echo $text['Añadir fichaje'];?></button>
                                     </div>
                                 </div>
                                 <!-- end table-responsive -->
@@ -111,15 +110,14 @@ $data = date('Y-m-d H:i:s');
                                         <table class="table table-centered table-hover table-nowrap mb-0">
                                             <thead>
                                               <tr>
-                                                <th scope="col">Fecha</th>
-                                                <th scope="col">Horas</th>
-                                                <th scope="col">Dedicación</th>
+                                                <th scope="col"><?php echo $text['Fecha'];?></th>
+                                                <th scope="col"><?php echo $text['Horas'];?></th>
+                                                <th scope="col"><?php echo $text['Dedicación'];?></th>
                                                 <th scope="col" style="width:100px"></th>
                                               </tr>
                                             </thead>
                                             <tbody>
                                                 <?php
-                                                $diesSetmana = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
                                                 $diesMes = [31,28,31,30,31,30,31,31,30,31,30,31];
                                                 if(isset($_GET['date'])){
                                                     $currentMonth=$dataExplotada[0];
@@ -159,7 +157,7 @@ $data = date('Y-m-d H:i:s');
                                                                 }
                                                             }
                                                             if($j==0){
-                                                                echo '<div style="color:#ccc;">No hay fichajes</div>';
+                                                                echo '<div style="color:#ccc;">'.$text['No hay fichajes'].'</div>';
                                                             }
                                                             ?>
                                                         </div>
@@ -182,7 +180,7 @@ $data = date('Y-m-d H:i:s');
                                                             "comment",
                                                             "idUser"
                                                             ],["AND"=>["idUser"=>$userId,"data"=>$parteData]]);
-                                                        if($numPartes==0){echo '<div style="color:#ccc;">No hay asignación</div>';}
+                                                        if($numPartes==0){echo '<div style="color:#ccc;">'.$text['No hay dedicación'].'</div>';}
                                                         foreach ($partes as $parte) {
                                                             $percentatgePartes = $database->sum("partes", "percentatge",["AND"=>["idUser"=>$userId,"data"=>$parteData]]);
                                                             if($percentatgePartes==100){$fitxatgeColor='#34c38f';$fitxatgeIcon='fitxatge-icon';}else{$fitxatgeColor='#f46a6a';$fitxatgeIcon='fitxatge-icon-danger';}
@@ -203,8 +201,8 @@ $data = date('Y-m-d H:i:s');
                                                                 <i class="uil uil-ellipsis-v"></i>
                                                             </a>
                                                             <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-126px, 32px, 0px);">
-                                                                <a class="dropdown-item" onclick="<?php echo "dataOnValue('".$parteData."')";?>" data-toggle="modal" data-target="#addParte" style="cursor:pointer;">Añadir asignación</a>
-                                                                <a class="dropdown-item" href="fitxatges-editar.php?dia=<?php echo $dataLoop;?>" style="cursor:pointer;">Editar día</a>
+                                                                <a class="dropdown-item" onclick="<?php echo "dataOnValue('".$parteData."')";?>" data-toggle="modal" data-target="#addParte" style="cursor:pointer;"><?php echo $text['Añadir asignación'];?></a>
+                                                                <a class="dropdown-item" href="fitxatges-editar.php?dia=<?php echo $dataLoop;?>" style="cursor:pointer;"><?php echo $text['Editar día'];?></a>
                                                             </div>
                                                         </li>
                                                     </td>

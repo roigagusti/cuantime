@@ -30,7 +30,7 @@ function inicials($name){
     <?php include_once("sections/meta.php") ?>
 
     <!-- Títol i Favicons -->
-    <title>Cuantime. Equipo</title>
+    <title>Cuantime. <?php echo $text['Equipo'];?></title>
 
     <!-- CSS Libraries -->
     <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -66,13 +66,13 @@ function inicials($name){
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0">Perfil de colaborador</h4>
+                                <h4 class="mb-0"><?php echo $text['Perfil de colaborador'];?></h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                     <li class="breadcrumb-item"><a href="index.php">Cuantime</a></li>
-                                    <li class="breadcrumb-item"><a href="equip.php">Equip</a></li>
-                                    <li class="breadcrumb-item active">Perfil de colaborador</li>
+                                    <li class="breadcrumb-item"><a href="equip.php"><?php echo $text['Equipo'];?></a></li>
+                                    <li class="breadcrumb-item active"><?php echo $text['Perfil'];?></li>
                                     </ol>
                                 </div>
 
@@ -110,8 +110,8 @@ function inicials($name){
                                             </a>
                                           
                                             <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" data-toggle="modal" data-target="#editUser" style="cursor:pointer;">Editar colaborador</a>
-                                                <a class="dropdown-item text-danger" data-toggle="modal" data-target="#removeConfirm" style="cursor:pointer;">Borrar colaborador</a>
+                                                <a class="dropdown-item" data-toggle="modal" data-target="#editUser" style="cursor:pointer;"><?php echo $text['Editar colaborador'];?></a>
+                                                <a class="dropdown-item text-danger" data-toggle="modal" data-target="#removeConfirm" style="cursor:pointer;"><?php echo $text['Borrar colaborador'];?></a>
                                             </div>
                                         </div>
                                         <div class="clearfix"></div>
@@ -124,7 +124,7 @@ function inicials($name){
                                         <p class="text-muted"><?php echo $userEmpresa;?></p>
 
                                         <div class="mt-4">
-                                            <a href="mailto:<?php echo $userEmail;?>" class="btn btn-light btn-sm"><i class="uil uil-envelope-alt mr-2"></i> Enviar email</a>
+                                            <a href="mailto:<?php echo $userEmail;?>" class="btn btn-light btn-sm"><i class="uil uil-envelope-alt mr-2"></i> <?php echo $text['Enviar email'];?></a>
                                         </div>
                                     </div>
 
@@ -133,19 +133,19 @@ function inicials($name){
                                     <div class="text-muted">
                                         <div class="table-responsive mt-4">
                                             <div>
-                                                <p class="mb-1">Nombre:</p>
+                                                <p class="mb-1"><?php echo $text['Nombre'];?>:</p>
                                                 <h5 class="font-size-16"><?php echo $userNom;?></h5>
                                             </div>
                                             <div class="mt-4">
-                                                <p class="mb-1">E-mail:</p>
+                                                <p class="mb-1"><?php echo $text['E-mail'];?>:</p>
                                                 <h5 class="font-size-16"><?php echo $userEmail;?></h5>
                                             </div>
                                             <div class="mt-4">
-                                                <p class="mb-1">Tipo de usuario:</p>
+                                                <p class="mb-1"><?php echo $text['Tipo de usuario'];?>:</p>
                                                 <h5 class="font-size-16"><?php echo $userTipus;?></h5>
                                             </div>
                                             <div class="mt-4">
-                                                <p class="mb-1">Tipo de colaboración:</p>
+                                                <p class="mb-1"><?php echo $text['Tipo de colaboración'];?>:</p>
                                                 <h5 class="font-size-16"><?php echo $userColaborador;?></h5>
                                             </div>
                                         </div>
@@ -155,7 +155,7 @@ function inicials($name){
                             
                             <div class="d-print-none mt-4">
                                 <a href="equip.php" class="btn btn-link text-muted">
-                                    <i class="uil uil-arrow-left mr-1"></i> Volver a equipo
+                                    <i class="uil uil-arrow-left mr-1"></i> <?php echo $text['Volver a equipo'];?>
                                 </a>
                             </div>
                         </div>
@@ -167,7 +167,7 @@ function inicials($name){
                                     <li class="nav-item">
                                         <a class="nav-link active" data-toggle="tab" href="#tasks" role="tab">
                                             <i class="uil uil-clipboard-notes font-size-20"></i>
-                                            <span class="d-none d-sm-block">Proyectos</span> 
+                                            <span class="d-none d-sm-block"><?php echo $text['Proyectos'];?></span> 
                                         </a>
                                     </li>
                                 </ul>
@@ -185,12 +185,12 @@ function inicials($name){
                                                         <thead>
                                                             <tr>
                                                                 <th scope="col">#</th>
-                                                                <th scope="col">Proyectos</th>
-                                                                <th scope="col">Dedicación</th>
-                                                                <th scope="col">Estado</th>
-                                                                <th scope="col" style="width: 120px;">Oferta</th>
-                                                                <th scope="col" style="width: 120px;" class="text-center">Asignación</th>
-                                                                <th scope="col" style="width: 120px;">Ganancia</th>
+                                                                <th scope="col"><?php echo $text['Proyectos'];?></th>
+                                                                <th scope="col"><?php echo $text['Dedicación'];?></th>
+                                                                <th scope="col"><?php echo $text['Estado'];?></th>
+                                                                <th scope="col" style="width: 120px;"><?php echo $text['Oferta'];?></th>
+                                                                <th scope="col" style="width: 120px;" class="text-center"><?php echo $text['Asignación'];?></th>
+                                                                <th scope="col" style="width: 120px;"><?php echo $text['Ganancia'];?></th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>

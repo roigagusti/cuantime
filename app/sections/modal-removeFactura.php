@@ -9,7 +9,7 @@
             </div>
             <form method="post" action="conexiones/administracio.php?action=removeFactura&id=<?php echo $_GET['id'];?>" >
                 <div class="modal-body">
-                    <p>¿Estás seguro que quieres borrar esta factura?</a></p>
+                    <p><?php echo $text['¿Estás seguro que quieres borrar esta factura?'];?></a></p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light waves-effect" data-dismiss="modal">Cancelar</button>

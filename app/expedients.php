@@ -17,7 +17,7 @@ include_once("classes/functions.php");
     <?php include_once("sections/meta.php") ?>
 
     <!-- Títol i Favicons -->
-    <title>Cuantime. <?php echo $text['Expedients'];?></title>
+    <title>Cuantime. <?php echo $text['Expedientes'];?></title>
 
     <!-- CSS Libraries -->
     <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -53,12 +53,12 @@ include_once("classes/functions.php");
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0"><?php echo $text['Expedients'];?></h4>
+                                <h4 class="mb-0"><?php echo $text['Expedientes'];?></h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="index.php">Cuantime</a></li>
-                                        <li class="breadcrumb-item active"><?php echo $text['Expedients'];?></li>
+                                        <li class="breadcrumb-item active"><?php echo $text['Expedientes'];?></li>
                                     </ol>
                                 </div>
 
@@ -73,11 +73,47 @@ include_once("classes/functions.php");
                     <!--<php include_once("sections/dashboard-varisQuadres.php") ?>-->
 
                     <div class="row">
-                        <div class="col-md-4">
-                            <div>
-                                <button type="button" class="btn btn-success waves-effect waves-light mb-3" data-toggle="modal" data-target="#addExp"><i class="mdi mdi-plus mr-1"></i> <?php echo $text['Crear expedient'];?></button>
-                            </div>
+                        <div class="col-md-6">
+                            <button type="button" class="btn btn-success mb-3" data-toggle="modal" data-target="#addExp"><i class="mdi mdi-plus mr-1"></i> <?php echo $text['Crear expediente'];?></button>
                         </div>
+                        <div id="button-show" class="col-md-6 show-stats">
+                            <button type="button" class="btn btn-contorn mb-3" onclick="showStats()"><?php echo $text['Mostrar estadísticas'];?></button>
+                        </div>
+                        <div id="button-hidden" class="col-md-6 show-stats hidden">
+                            <button type="button" class="btn btn-contorn mb-3" onclick="hideStats()"><?php echo $text['Esconder estadísticas'];?></button>
+                        </div>
+                    </div>
+                    <div id="stats" class="row hidden">
+                        <div class="col-lg-12">
+                            <?php
+                            $query = "
+                                SELECT
+                                    YEAR(f.timeIn) AS year,
+                                    MONTH(f.timeIn) AS month,
+                                    pr.nom AS project_name,
+                                    SUM((HOUR(TIMEDIFF(f.timeOut, f.timeIn)) + minute(TIMEDIFF(f.timeOut, f.timeIn))/60 + SECOND(TIMEDIFF(f.timeOut, f.timeIn))/3600)*p.percentatge/100) AS horas_dedicadas
+                                FROM
+                                    cuantime.fitxatges f
+                                JOIN
+                                    cuantime.partes p ON f.idUser = p.idUser
+                                                    AND YEAR(f.timeIn) = YEAR(p.data) AND MONTH(f.timeIn) = MONTH(p.data) AND DAY(f.timeIn) = DAY(p.data)
+                                LEFT JOIN
+                                    cuantime.projectes pr ON p.idProjecte = pr.id
+                                WHERE
+                                    f.idUser = ".$userAdminEmpresa."
+                                GROUP BY
+                                    YEAR(f.timeIn), MONTH(f.timeIn), p.idProjecte
+                                ORDER BY
+                                    year, month, p.idProjecte;
+                            ";
+                            $data = $database->query($query)->fetchAll();
+                            foreach ($data as $key => $value) {
+                                echo $value['year']." - ".$text['mes-'.$value['month']]." -> ".$value['project_name'].": ".round($value['horas_dedicadas'],2)." ".$text['horas']."<br>";
+                            }
+                            ?>
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-body">
@@ -106,14 +142,14 @@ include_once("classes/functions.php");
                                                         </div>
                                                     </th>-->
                                                     <th><?php echo $text['Número'];?></th>
-                                                    <th><?php echo $text['Estat'];?></th>
-                                                    <th><?php echo $text['Projecte'];?></th>
-                                                    <th><?php echo $text['Client'];?></th>
-                                                    <th><?php echo $text['Assignat'];?></th>
-                                                    <th><?php echo $text['Ofertes'];?></th>
-                                                    <th><?php echo $text['Dedicació'];?></th>
-                                                    <th><?php echo $text['Cost'];?></th>
-                                                    <th><?php echo $text['Balanç'];?></th>
+                                                    <th><?php echo $text['Estado'];?></th>
+                                                    <th><?php echo $text['Proyecto'];?></th>
+                                                    <th><?php echo $text['Cliente'];?></th>
+                                                    <th><?php echo $text['Asignado'];?></th>
+                                                    <th><?php echo $text['Ofertas'];?></th>
+                                                    <th><?php echo $text['Dedicación'];?></th>
+                                                    <th><?php echo $text['Coste'];?></th>
+                                                    <th><?php echo $text['Balance'];?></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -222,19 +258,19 @@ include_once("classes/functions.php");
                                                                     <span class="font-size-12">-</span>
                                                                 </a>
                                                                 <a class="dropdown-item" href="conexiones/administracio.php?action=estatExp&estat=1&id=<?php echo $projecte['id'];?>">
-                                                                    <span class="badge badge-pill badge-soft-secondary font-size-12">Pausa</span>
+                                                                    <span class="badge badge-pill badge-soft-secondary font-size-12"><?php echo $text['Pausa'];?></span>
                                                                 </a>
                                                                 <a class="dropdown-item" href="conexiones/administracio.php?action=estatExp&estat=2&id=<?php echo $projecte['id'];?>">
-                                                                    <span class="badge badge-pill badge-soft-danger font-size-12">Por asignar</span>
+                                                                    <span class="badge badge-pill badge-soft-danger font-size-12"><?php echo $text['Por asignar'];?></span>
                                                                 </a>
                                                                 <a class="dropdown-item" href="conexiones/administracio.php?action=estatExp&estat=3&id=<?php echo $projecte['id'];?>">
-                                                                    <span class="badge badge-pill badge-soft-warning font-size-12">En proceso</span>
+                                                                    <span class="badge badge-pill badge-soft-warning font-size-12"><?php echo $text['En proceso'];?></span>
                                                                 </a>
                                                                 <a class="dropdown-item" href="conexiones/administracio.php?action=estatExp&estat=4&id=<?php echo $projecte['id'];?>">
-                                                                    <span class="badge badge-pill badge-soft-info font-size-12">Entregado</span>
+                                                                    <span class="badge badge-pill badge-soft-info font-size-12"><?php echo $text['Entregado'];?></span>
                                                                 </a>
                                                                 <a class="dropdown-item" href="conexiones/administracio.php?action=estatExp&estat=5&id=<?php echo $projecte['id'];?>">
-                                                                    <span class="badge badge-pill badge-soft-success font-size-12">Acabado</span>
+                                                                    <span class="badge badge-pill badge-soft-success font-size-12"><?php echo $text['Acabado'];?></span>
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -330,6 +366,7 @@ include_once("classes/functions.php");
 <script src="assets/js/pages/table-responsive.init.js"></script>
 <!-- JavaScripts custom -->
 <script src="assets/js/app.js"></script>
+<script src="js/script.js"></script>
 <!-- Scripts custom -->
 
 </body>

@@ -23,7 +23,7 @@ function inicials($name){
     <?php include_once("sections/meta.php") ?>
 
     <!-- Títol i Favicons -->
-    <title>Cuantime. Clientes</title>
+    <title>Cuantime. <?php echo $text['Clientes'];?></title>
 
     <!-- CSS Libraries -->
     <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -59,13 +59,13 @@ function inicials($name){
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0">Perfil de contacto</h4>
+                                <h4 class="mb-0"><?php echo $text['Perfil de contacto'];?></h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                     <li class="breadcrumb-item"><a href="index.php">Cuantime</a></li>
-                                    <li class="breadcrumb-item"><a href="clients.php">Clientes</a></li>
-                                    <li class="breadcrumb-item active">Perfil de contacto</li>
+                                    <li class="breadcrumb-item"><a href="clients.php"><?php echo $text['Clientes'];?></a></li>
+                                    <li class="breadcrumb-item active"><?php echo $text['Perfil de contacto'];?></li>
                                     </ol>
                                 </div>
 
@@ -105,8 +105,8 @@ function inicials($name){
                                             </a>
                                           
                                             <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" data-toggle="modal" data-target="#editClient" style="cursor:pointer;">Editar contacto</a>
-                                                <a class="dropdown-item text-danger" data-toggle="modal" data-target="#removeConfirm" style="cursor:pointer;">Borrar contacto</a>
+                                                <a class="dropdown-item" data-toggle="modal" data-target="#editClient" style="cursor:pointer;"><?php echo $text['Editar contacto'];?></a>
+                                                <a class="dropdown-item text-danger" data-toggle="modal" data-target="#removeConfirm" style="cursor:pointer;"><?php echo $text['Borrar contacto'];?></a>
                                             </div>
                                         </div>
                                         <div class="clearfix"></div>
@@ -120,9 +120,9 @@ function inicials($name){
 
                                         <div class="mt-4">
                                             <?php if($clientMail!=""){?>
-                                                <a href="mailto:<?php echo $clientMail;?>" class="btn btn-light btn-sm"><i class="uil uil-envelope-alt mr-2"></i> Enviar email</a>
+                                                <a href="mailto:<?php echo $clientMail;?>" class="btn btn-light btn-sm"><i class="uil uil-envelope-alt mr-2"></i> <?php echo $text['Enviar email'];?></a>
                                             <?php } if($clientTelefon!=""){?>
-                                                <a href="tel:<?php echo $clientTelefon;?>" class="btn btn-light btn-sm"><i class="uil uil-phone-alt mr-2"></i> Llamar</a>
+                                                <a href="tel:<?php echo $clientTelefon;?>" class="btn btn-light btn-sm"><i class="uil uil-phone-alt mr-2"></i> <?php echo $text['Llamar'];?></a>
                                             <?php } ?>
                                         </div>
                                     </div>
@@ -132,23 +132,23 @@ function inicials($name){
                                     <div class="text-muted">
                                         <div class="table-responsive mt-4">
                                             <div>
-                                                <p class="mb-1">Nombre:</p>
+                                                <p class="mb-1"><?php echo $text['Nombre'];?>:</p>
                                                 <h5 class="font-size-16"><?php echo $clientNom;?></h5>
                                             </div>
                                             
                                             <?php if($clientTelefon!=""){?>
                                             <div class="mt-4">
-                                                <p class="mb-1">Teléfono:</p>
+                                                <p class="mb-1"><?php echo $text['Teléfono'];?>:</p>
                                                 <h5 class="font-size-16"><?php echo $clientTelefon;?></h5>
                                             </div>
                                         <?php } if($clientMail!=""){?>
                                             <div class="mt-4">
-                                                <p class="mb-1">E-mail:</p>
+                                                <p class="mb-1"><?php echo $text['E-mail'];?>:</p>
                                                 <h5 class="font-size-16"><?php echo $clientMail;?></h5>
                                             </div>
                                         <?php } if($clientCIF!=""){?>
                                             <div class="mt-4">
-                                                <p class="mb-1">CIF:</p>
+                                                <p class="mb-1"><?php echo $text['CIF'];?>:</p>
                                                 <h5 class="font-size-16"><?php echo $clientCIF;?></h5>
                                             </div>
                                         <?php }?>
@@ -160,7 +160,7 @@ function inicials($name){
                             
                             <div class="d-print-none mt-4">
                                 <a href="clients.php" class="btn btn-link text-muted">
-                                    <i class="uil uil-arrow-left mr-1"></i> Volver a clientes
+                                    <i class="uil uil-arrow-left mr-1"></i> <?php echo $text['Volver a clientes'];?>
                                 </a>
                             </div>
                         </div>
@@ -172,14 +172,14 @@ function inicials($name){
                                     <li class="nav-item">
                                         <a class="nav-link active" data-toggle="tab" href="#tasks" role="tab">
                                             <i class="uil uil-clipboard-notes font-size-20"></i>
-                                            <span class="d-none d-sm-block">Proyectos</span> 
+                                            <span class="d-none d-sm-block"><?php echo $text['Proyectos'];?></span> 
                                         </a>
                                     </li>
                                 </ul>
                                 <!-- Tab content -->
                                 <?php
                                 $numProjectes = $database->count("projectes",["idClient"=>$_GET['id']]);
-                                if($numProjectes<1){echo '<span class="p-4 text-center">No hay proyectos</span>';}else{
+                                if($numProjectes<1){echo '<span class="p-4 text-center">'.$text['No hay proyectos'].'</span>';}else{
                                 ?>
                                 <div class="tab-content p-4">
                                     <div class="tab-pane active" id="about" role="tabpanel">
@@ -190,10 +190,10 @@ function inicials($name){
                                                         <thead>
                                                             <tr>
                                                                 <th scope="col">#</th>
-                                                                <th scope="col">Proyectos</th>
-                                                                <th scope="col">Fecha</th>
-                                                                <th scope="col">Estado</th>
-                                                                <th scope="col" style="width: 120px;">Oferta</th>
+                                                                <th scope="col"><?php echo $text['Proyectos'];?></th>
+                                                                <th scope="col"><?php echo $text['Fecha'];?></th>
+                                                                <th scope="col"><?php echo $text['Estado'];?></th>
+                                                                <th scope="col" style="width: 120px;"><?php echo $text['Oferta'];?></th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>

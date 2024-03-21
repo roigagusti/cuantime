@@ -33,13 +33,13 @@
                 <li>
                     <a href="tareas.php" class="waves-effect">
                         <i class="uil-list-ui-alt"></i>
-                        <span>Tareas</span>
+                        <span><?php echo $text['Tareas'];?></span>
                     </a>
                 </li>
                 <li>
                     <a href="expedients.php" class="waves-effect">
                         <i class="uil-folder"></i>
-                        <span><?php echo $text['Expedients'];?></span>
+                        <span><?php echo $text['Expedientes'];?></span>
                     </a>
                 </li>
 
@@ -47,13 +47,13 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="uil-invoice"></i>
-                        <span><?php echo $text['Administració'];?></span>
+                        <span><?php echo $text['Administración'];?></span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="clients.php"><?php echo $text['Clients'];?></a></li>
-                        <li><a href="ofertes.php"><?php echo $text['Ofertes'];?></a></li>
-                        <li><a href="factures.php"><?php echo $text['Factures'];?></a></li>
-                        <li><a href="despeses.php"><?php echo $text['Despeses'];?></a></li>
+                        <li><a href="clients.php"><?php echo $text['Clientes'];?></a></li>
+                        <li><a href="ofertes.php"><?php echo $text['Ofertas'];?></a></li>
+                        <li><a href="factures.php"><?php echo $text['Facturas'];?></a></li>
+                        <li><a href="despeses.php"><?php echo $text['Gastos'];?></a></li>
                         <li><a href="impuestos.php"><?php echo $text['Impuestos'];?></a></li>
                     </ul>
                 </li>
@@ -62,12 +62,12 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="uil-clock-nine"></i>
-                        <span>Personal</span>
+                        <span><?php echo $text['Personal'];?></span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="fitxatges.php"><?php echo $text['Fitxatges'];?></a></li>
+                        <li><a href="fitxatges.php"><?php echo $text['Fichajes'];?></a></li>
                         <?php
-                        if($userType<2){echo '<li><a href="equip.php">'.$text['Equip'].'</a></li>';};
+                        if($userType<2){echo '<li><a href="equip.php">'.$text['Equipo'].'</a></li>';};
                         ?>
                     </ul>
                 </li>

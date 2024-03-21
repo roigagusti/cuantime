@@ -25,7 +25,7 @@ foreach($ofertes as $oferta){
                     <div class="row">
                         <div class="col-lg-8">
                             <div class="form-group">
-                                <label class="control-label">Cliente</label>
+                                <label class="control-label"><?php echo $text['Cliente'];?></label>
                                 <select class="form-control" name="client">
                                     <?php
                                     echo '<option value="'.$clientId.'">'.$clientNom.'</option>';
@@ -45,12 +45,12 @@ foreach($ofertes as $oferta){
                             </div>
                         </div>
                     </div>
-                    <p><a href="clients.php"><i class="mdi mdi-plus mr-1"></i> Crear cliente</a></p>
+                    <p><a href="clients.php"><i class="mdi mdi-plus mr-1"></i> <?php echo $text['Crear cliente'];?></a></p>
 
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <label>Número propuesta</label>
+                                <label><?php echo $text['Número propuesta'];?></label>
                                 <div class="input-group">
                                     <input type="text" class="form-control" value="<?php echo $oferta['numero'];?>" name="numeroProposta">
                                 </div>
@@ -58,7 +58,7 @@ foreach($ofertes as $oferta){
                         </div>
                         <div class="col-lg-8">
                             <div class="form-group">
-                                <label>Nombre de proyecto</label>
+                                <label><?php echo $text['Nombre de proyecto'];?></label>
                                 <div class="input-group">
                                     <input type="text" class="form-control" value="<?php echo $projecteNom;?>"  name="nomProjecte">
                                 </div>
@@ -69,7 +69,7 @@ foreach($ofertes as $oferta){
                     <div class="row">
                         <div class="col-lg-8">
                             <div class="form-group">
-                                <label>Ciudad</label>
+                                <label><?php echo $text['Ciudad'];?></label>
                                 <div class="input-group">
                                     <input type="text" class="form-control" value="<?php echo $projecteCiutat;?>"   name="ciutatProjecte">
                                 </div>
@@ -77,7 +77,7 @@ foreach($ofertes as $oferta){
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <label>Precio</label>
+                                <label><?php echo $text['Precio'];?></label>
                                 <div class="input-group">
                                     <input type="text" class="form-control" value="<?php echo $oferta['preu'];?>" name="preuProjecte">
                                 </div>
@@ -87,7 +87,7 @@ foreach($ofertes as $oferta){
                         
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary waves-effect waves-light">Guardar</button>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light"><?php echo $text['Guardar'];?></button>
                 </div>
             </form>
             <form method="POST" action="conexiones/administracio.php?action=removeOferta">
@@ -96,16 +96,16 @@ foreach($ofertes as $oferta){
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="form-group">
-                                <label class="control-label">Borrar</label>
-                                <p>Escribe "ESBORRAR" para confirmar</p>
+                                <label class="control-label"><?php echo $text['Borrar'];?></label>
+                                <p><?php echo $text['Escribe "BORRAR" para confirmar'];?></p>
                                 <input type="text" class="form-control" name="deleteProjecte">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-light waves-effect" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-danger waves-effect waves-light">Borrar</button>
+                    <button type="button" class="btn btn-light waves-effect" data-dismiss="modal"><?php echo $text['Cancelar'];?></button>
+                    <button type="submit" class="btn btn-danger waves-effect waves-light"><?php echo $text['Borrar'];?></button>
                 </div>
             </form>
 <?php } ?>

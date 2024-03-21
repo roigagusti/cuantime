@@ -16,7 +16,7 @@ include_once("classes/functions.php");
     <?php include_once("sections/meta.php") ?>
 
     <!-- Títol i Favicons -->
-    <title>Cuantime. Facturas</title>
+    <title>Cuantime. <?php echo $text['Facturas'];?></title>
 
     <!-- CSS Libraries -->
     <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -102,13 +102,13 @@ include_once("classes/functions.php");
                     <div class="row d-print-none">
                         <div class="col-12">
                             <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0">Factura detalle</h4>
+                                <h4 class="mb-0"><?php echo $text['Factura detalle'];?></h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                     <li class="breadcrumb-item"><a href="index.php">Aldasoro</a></li>
-                                    <li class="breadcrumb-item"><a href="factures.php">Facturas</a></li>
-                                    <li class="breadcrumb-item active">F_<?php echo beautyExp($numeroFactura)s;?></li>
+                                    <li class="breadcrumb-item"><a href="factures.php"><?php echo $text['Facturas'];?></a></li>
+                                    <li class="breadcrumb-item active">F_<?php echo beautyExp($numeroFactura);?></li>
                                     </ol>
                                 </div>
 
@@ -140,8 +140,8 @@ include_once("classes/functions.php");
                                                     <i class="uil uil-user text-primary h2"></i>
                                                 </div>
                                                 <div class="media-body overflow-hidden">
-                                                    <h5 class="font-size-16 mb-1">Datos del cliente</h5>
-                                                    <p class="text-muted text-truncate mb-0">Editar datos del cliente</p>
+                                                    <h5 class="font-size-16 mb-1"><?php echo $text['Datos del cliente'];?></h5>
+                                                    <p class="text-muted text-truncate mb-0"><?php echo $text['Editar datos del cliente'];?></p>
                                                 </div>
                                                 <i class="mdi mdi-chevron-up accor-down-icon font-size-24"></i>
                                             </div>
@@ -153,7 +153,7 @@ include_once("classes/functions.php");
                                             <div class="row">
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
-                                                        <label>Nombre</label>
+                                                        <label><?php echo $text['Nombre'];?></label>
                                                         <div class="input-group">
                                                             <input type="text" class="form-control" name="clientNom" value="<?php echo $facturaNom;?>">
                                                         </div>
@@ -161,7 +161,7 @@ include_once("classes/functions.php");
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
-                                                        <label>Empresa</label>
+                                                        <label><?php echo $text['Empresa'];?></label>
                                                         <div class="input-group">
                                                             <input type="text" class="form-control" name="clientEmpresa" value="<?php echo $facturaEmpresa;?>">
                                                         </div>
@@ -171,7 +171,7 @@ include_once("classes/functions.php");
                                             <div class="row">
                                                 <div class="col-lg-8">
                                                     <div class="form-group">
-                                                        <label>Dirección</label>
+                                                        <label><?php echo $text['Dirección'];?></label>
                                                         <div class="input-group">
                                                             <input type="text" class="form-control" name="clientDireccio" value="<?php echo $facturaDireccio;?>">
                                                         </div>
@@ -179,7 +179,7 @@ include_once("classes/functions.php");
                                                 </div>
                                                 <div class="col-lg-4">
                                                     <div class="form-group">
-                                                        <label>Código postal</label>
+                                                        <label><?php echo $text['Código postal'];?></label>
                                                         <div class="input-group">
                                                             <input type="number" class="form-control" name="clientCP" value="<?php echo $facturaCP;?>">
                                                         </div>
@@ -190,7 +190,7 @@ include_once("classes/functions.php");
                                             <div class="row">
                                                 <div class="col-lg-4">
                                                     <div class="form-group">
-                                                        <label>Ciudad</label>
+                                                        <label><?php echo $text['Ciudad'];?></label>
                                                         <div class="input-group">
                                                             <input type="text" class="form-control" name="clientCiutat" value="<?php echo $facturaCiutat;?>">
                                                         </div>
@@ -206,7 +206,7 @@ include_once("classes/functions.php");
                                                 </div>
                                                 <div class="col-lg-5">
                                                     <div class="form-group">
-                                                        <label>Teléfono</label>
+                                                        <label><?php echo $text['Teléfono'];?></label>
                                                         <div class="input-group">
                                                             <input type="phone" class="form-control" name="clientTelefon" value="<?php echo $facturaTelefonBase;?>">
                                                         </div>
@@ -217,7 +217,7 @@ include_once("classes/functions.php");
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
-                                                        <label>Email</label>
+                                                        <label><?php echo $text['Email'];?></label>
                                                         <div class="input-group">
                                                             <input type="email" class="form-control" name="clientEmail" value="<?php echo $facturaEmailBase;?>">
                                                         </div>
@@ -237,8 +237,8 @@ include_once("classes/functions.php");
                                                     <i class="uil uil-invoice text-primary h2"></i>
                                                 </div>
                                                 <div class="media-body overflow-hidden">
-                                                    <h5 class="font-size-16 mb-1">Datos de la factura</h5>
-                                                    <p class="text-muted text-truncate mb-0">Editar datos de facturación</p>
+                                                    <h5 class="font-size-16 mb-1"><?php echo $text['Datos de la factura'];?></h5>
+                                                    <p class="text-muted text-truncate mb-0"><?php echo $text['Editar datos de facturación'];?></p>
                                                 </div>
                                                 <i class="mdi mdi-chevron-up accor-down-icon font-size-24"></i>
                                             </div>
@@ -251,7 +251,7 @@ include_once("classes/functions.php");
                                             <div class="row">
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
-                                                        <label>Número de factura</label>
+                                                        <label><?php echo $text['Número de factura'];?></label>
                                                         <div class="input-group">
                                                             <input type="text" class="form-control" name="facturaNumero" value="<?php echo $numeroFactura;?>">
                                                         </div>
@@ -259,7 +259,7 @@ include_once("classes/functions.php");
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
-                                                        <label>Fecha de facturación</label>
+                                                        <label><?php echo $text['Fecha de facturación'];?></label>
                                                         <div class="input-group">
                                                             <input type="text" class="form-control" data-provide="datepicker" data-date-format="yyyy/mm/dd" data-date-autoclose="true" value="<?php echo date('Y/m/d',strtotime($dataFactura));?>" name="facturaData">
                                                             <div class="input-group-append">
@@ -272,7 +272,7 @@ include_once("classes/functions.php");
                                             <div class="row">
                                                 <div class="col-lg-8">
                                                     <div class="form-group">
-                                                        <label>Proyecto</label>
+                                                        <label><?php echo $text['Proyecto'];?></label>
                                                         <select class="form-control" name="facturaProjecte" required>
                                                             <option value="<?php echo $idProjecte;?>"><?php echo $expProjecte.' - '.$nomProjecte;?></option>
                                                             <?php 
@@ -291,7 +291,7 @@ include_once("classes/functions.php");
                                                 </div>
                                                 <div class="col-lg-4">
                                                     <div class="form-group">
-                                                        <label>Importe</label>
+                                                        <label><?php echo $text['Importe'];?></label>
                                                         <div class="input-group">
                                                             <input type="number" onchange="calculPreu()" id="facturaImport" step="any" class="form-control" name="facturaImport" value="<?php echo $importFactura;?>">
                                                         </div>
@@ -322,17 +322,17 @@ include_once("classes/functions.php");
                                                 </div>
                                             </div>
 
-                                            <p class="impMod" onclick="showImpost()" style="cursor:pointer;color:#34c38f;">Modificar impostos</p>
-                                            <p class="impAma hidden" onclick="showImpost()" style="cursor:pointer;color:#34c38f;">Amagar impostos</p>
+                                            <p class="impMod" onclick="showImpost()" style="cursor:pointer;color:#34c38f;"><?php echo $text['Modificar impostos'];?></p>
+                                            <p class="impAma hidden" onclick="showImpost()" style="cursor:pointer;color:#34c38f;"><?php echo $text['Amagar impostos'];?></p>
                                             <div class="impAma hidden">
                                                 <div class="row">
-                                                    <div class="col-lg-2">Porcentaje de IVA</div>
+                                                    <div class="col-lg-2"><?php echo $text['Porcentaje de'];?> IVA</div>
                                                     <div class="col-lg-2">
                                                         <input type="text" onchange="calculPreu()" class="form-control text-right" name="facturaIVA" id="facturaIVA" value="<?php echo $facturaIVA;?>">
                                                     </div>
                                                 </div>
                                                 <div class="row" style="margin-top:5px;margin-bottom: 10px">
-                                                    <div class="col-lg-2">Porcentaje de IRPF</div>
+                                                    <div class="col-lg-2"><?php echo $text['Porcentaje de'];?> IRPF</div>
                                                     <div class="col-lg-2">
                                                         <input type="text" onchange="calculPreu()" class="form-control text-right" name="facturaIRPF" id="facturaIRPF" value="<?php echo $facturaIRPF;?>">
                                                     </div>
@@ -345,8 +345,8 @@ include_once("classes/functions.php");
                                 <!-- BOTONS -->
                                 <div class="d-print-none mt-4 mb-1">
                                     <div class="float-right printerFooter">
-                                        <a data-toggle="modal" data-target="#removeFactura" class="btn btn-danger w-md waves-effect waves-light" style="margin-right:5px">Borrar factura</a>
-                                        <button type="submit" class="btn btn-success waves-effect waves-light mr-1">Guardar factura</button>
+                                        <a data-toggle="modal" data-target="#removeFactura" class="btn btn-danger w-md waves-effect waves-light" style="margin-right:5px"><?php echo $text['Borrar factura'];?></a>
+                                        <button type="submit" class="btn btn-success waves-effect waves-light mr-1"><?php echo $text['Guardar factura'];?></button>
                                         <!--<a href="javascript:window.print()" class="btn btn-success waves-effect waves-light mr-1"><i class="fa fa-print"></i></a>-->
                                     </div>
                                 </div>
@@ -354,7 +354,7 @@ include_once("classes/functions.php");
                             
                             <div class="d-print-none mt-4 ">
                                 <a href="factures.php" class="btn btn-link text-muted">
-                                    <i class="uil uil-arrow-left mr-1"></i> Volver a factures
+                                    <i class="uil uil-arrow-left mr-1"></i> <?php echo $text['Volver a facturas'];?>
                                 </a>
                             </div>
 
@@ -435,13 +435,13 @@ include_once("classes/functions.php");
                             padding-bottom:20px !important;
                         }
                         </style>
-                        <div class="avisNoFactura d-print-none">Visualización de factura no disponible</div>
+                        <div class="avisNoFactura d-print-none"><?php echo $text['Visualización de factura no disponible'];?></div>
                         <div class="fullFactura">
                             <div class="card">
                                 <div class="card-body cardFactura">
                                     <div class="row">
                                         <div class="col-xl-12">
-                                            <div class="float-right numero-factura">Número de factura: <?php echo beautyExp($numeroFactura);?></div>
+                                            <div class="float-right numero-factura"><?php echo $text['Número de factura'];?>: <?php echo beautyExp($numeroFactura);?></div>
                                         </div>
                                     </div>
 
@@ -465,21 +465,21 @@ include_once("classes/functions.php");
                                         <table class="table-centered tabla-factura-contingut">
                                             <thead>
                                                 <tr>
-                                                    <th>Descripción</th>
+                                                    <th><?php echo $text['Descripción'];?></th>
                                                     <th style="width:120px"></th>
-                                                    <th style="width:120px" class="text-right">Importe</th>
+                                                    <th style="width:120px" class="text-right"><?php echo $text['Importe'];?></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr class="concepte">
-                                                    <td>Colaboració profesional en el proyecto <?php echo $nomProjecte;?></td>
+                                                    <td><?php echo $text['Colaboració profesional en el proyecto'];?> <?php echo $nomProjecte;?></td>
                                                     <td></td>
                                                     <td class="text-right"><?php echo number_format($importFactura,2,",",".").' €';?></td>
                                                 </tr>
                                                 <tr class="salt">
                                                 <tr class="subtotal">
                                                     <td></td>
-                                                    <td><strong>Base imponible</strong></td>
+                                                    <td><strong><?php echo $text['Base imponible'];?></strong></td>
                                                     <td class="text-right"><strong><?php echo number_format($importFactura,2,",",".").' €';?></strong></td>
                                                 </tr>
                                                 <tr class="iva">
@@ -495,7 +495,7 @@ include_once("classes/functions.php");
                                                 <tr class="salt">
                                                 <tr class="total">
                                                     <td></td>
-                                                    <td><strong>Importe total</strong></td>
+                                                    <td><strong><?php echo $text['Importe total'];?></strong></td>
                                                     <td class="text-right"><strong><?php echo number_format($importFactura*(1+($importIVA-$importIRPF)/100),2,",",".").' €';?></strong></td>
                                                 </tr>
                                             </tbody>
@@ -518,7 +518,7 @@ include_once("classes/functions.php");
                                     ?>
 
                                     <div class="row facturaFooter">
-                                        <div class="col-xl-3">Factura emitida por</div>
+                                        <div class="col-xl-3"><?php echo $text['Factura emitida por'];?></div>
                                         <div class="col-xl-4">
                                             <span class=footerTitle>
                                                 <?php 
@@ -538,9 +538,9 @@ include_once("classes/functions.php");
                                             <?php echo $empresa['empresaCP'].' '.$empresa['empresaCiutat'];?>
                                         </div>
                                         <div class="col-xl-5" style="padding-right:0">
-                                            <span class=footerTitle>Cuenta bancaria</span><br>
+                                            <span class=footerTitle><?php echo $text['Cuenta bancaria'];?></span><br>
                                             <?php echo $empresa['empresaBanc'];?><br>
-                                            Beneficiario: <?php echo $empresa['empresaNom'];?><br>
+                                            <?php echo $text['Beneficiario'];?>: <?php echo $empresa['empresaNom'];?><br>
                                             IBAN: <?php echo iban($empresa['empresaIBAN']);?><br>
                                             SWIFT: <?php echo $empresa['empresaSWIFT'];?>
                                         </div>

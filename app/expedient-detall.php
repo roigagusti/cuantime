@@ -17,7 +17,7 @@ $pagina = 'expedient-detall';
     <?php include_once("sections/meta.php") ?>
 
     <!-- Títol i Favicons -->
-    <title>Cuantime. Expedientes</title>
+    <title>Cuantime. <?php echo $text['Expedientes'];?></title>
 
     <!-- CSS Libraries -->
     <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -53,13 +53,13 @@ $pagina = 'expedient-detall';
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0">Proyecto</h4>
+                                <h4 class="mb-0"><?php echo $text['Proyecto'];?></h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                     <li class="breadcrumb-item"><a href="index.php">Cuantime</a></li>
-                                    <li class="breadcrumb-item"><a href="expedients.php">Expedientes</a></li>
-                                    <li class="breadcrumb-item active">Proyecto</li>
+                                    <li class="breadcrumb-item"><a href="expedients.php"><?php echo $text['Expedientes'];?></a></li>
+                                    <li class="breadcrumb-item active"><?php echo $text['Proyecto'];?></li>
                                     </ol>
                                 </div>
 
@@ -99,8 +99,8 @@ $pagina = 'expedient-detall';
                                             </a>
                                           
                                             <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" data-toggle="modal" data-target="#editExp" style="cursor:pointer;">Editar proyecto</a>
-                                                <a class="dropdown-item text-danger" data-toggle="modal" data-target="#removeConfirm" style="cursor:pointer;">Borrar proyecto</a>
+                                                <a class="dropdown-item" data-toggle="modal" data-target="#editExp" style="cursor:pointer;"><?php echo $text['Editar proyecto'];?></a>
+                                                <a class="dropdown-item text-danger" data-toggle="modal" data-target="#removeConfirm" style="cursor:pointer;"><?php echo $text['Borrar proyecto'];?></a>
                                             </div>
                                         </div>
                                         <div class="clearfix"></div>
@@ -109,9 +109,9 @@ $pagina = 'expedient-detall';
 
                                         <div class="mt-4">
                                             <?php if($clientMail!=""){?>
-                                                <a href="mailto:<?php echo $clientMail;?>" class="btn btn-light btn-sm"><i class="uil uil-envelope-alt mr-2"></i> Enviar email</a>
+                                                <a href="mailto:<?php echo $clientMail;?>" class="btn btn-light btn-sm"><i class="uil uil-envelope-alt mr-2"></i> <?php echo $text['Enviar email'];?></a>
                                             <?php } if($clientTelefon!=""){?>
-                                                <a href="tel:<?php echo $clientTelefon;?>" class="btn btn-light btn-sm"><i class="uil uil-phone-alt mr-2"></i> Llamar</a>
+                                                <a href="tel:<?php echo $clientTelefon;?>" class="btn btn-light btn-sm"><i class="uil uil-phone-alt mr-2"></i> <?php echo $text['Llamar'];?></a>
                                             <?php } ?>
                                         </div>
                                     </div>
@@ -121,18 +121,18 @@ $pagina = 'expedient-detall';
                                     <div class="text-muted">
                                         <div class="table-responsive mt-4">
                                             <div>
-                                                <p class="mb-1">Ciudad:</p>
+                                                <p class="mb-1"><?php echo $text['Ciudad'];?>:</p>
                                                 <h5 class="font-size-16"><?php echo $projecteCiutat;?></h5>
                                             </div>
                                             <div>
-                                                <p class="mb-1">Asignado a:</p>
+                                                <p class="mb-1"><?php echo $text['Asignado a'];?>:</p>
                                                 <h5 class="font-size-16"><?php echo $projecteUser;?></h5>
                                             </div>
                                             <?php
                                             $assignacioEncarregat = $database->get("projectes","assignacioEncarregat",["id"=>$_GET['id']]);
                                             ?>
                                             <div>
-                                                <p class="mb-1">Asignación económica:</p>
+                                                <p class="mb-1"><?php echo $text['Asignación económica'];?>:</p>
                                                 <h5 class="font-size-16"><?php echo number_format($assignacioEncarregat,2,",",".");?> %</h5>
                                             </div>
 
@@ -143,7 +143,7 @@ $pagina = 'expedient-detall';
                             
                             <div class="d-print-none mt-4">
                                 <a href="expedients.php" class="btn btn-link text-muted">
-                                    <i class="uil uil-arrow-left mr-1"></i> Volver a expedientes
+                                    <i class="uil uil-arrow-left mr-1"></i> <?php echo $text['Volver a expedientes'];?>
                                 </a>
                             </div>
                         </div>
@@ -155,19 +155,19 @@ $pagina = 'expedient-detall';
                                     <li class="nav-item">
                                         <a class="nav-link active" data-toggle="tab" href="#dedicacio" role="tab">
                                             <i class="uil uil-clock-nine font-size-20"></i>
-                                            <span class="d-none d-sm-block">Dedicación</span> 
+                                            <span class="d-none d-sm-block"><?php echo $text['Dedicación'];?></span> 
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" data-toggle="tab" href="#tasques" role="tab">
                                             <i class="uil uil-list-ui-alt font-size-20"></i>
-                                            <span class="d-none d-sm-block">Tareas</span> 
+                                            <span class="d-none d-sm-block"><?php echo $text['Tareas'];?></span> 
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" data-toggle="tab" href="#missatges" role="tab">
                                             <i class="uil uil-comment font-size-20"></i>
-                                            <span class="d-none d-sm-block">Mensajes</span> 
+                                            <span class="d-none d-sm-block"><?php echo $text['Mensajes'];?></span> 
                                         </a>
                                     </li>
                                     <!--<li class="nav-item">
@@ -179,13 +179,13 @@ $pagina = 'expedient-detall';
                                     <li class="nav-item">
                                         <a class="nav-link" data-toggle="tab" href="#ofertes" role="tab">
                                             <i class="uil uil-file-blank font-size-20"></i>
-                                            <span class="d-none d-sm-block">Ofertas</span> 
+                                            <span class="d-none d-sm-block"><?php echo $text['Ofertas'];?></span> 
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" data-toggle="tab" href="#factures" role="tab">
                                             <i class="uil uil-invoice font-size-20"></i>
-                                            <span class="d-none d-sm-block">Facturas</span> 
+                                            <span class="d-none d-sm-block"><?php echo $text['Facturas'];?></span> 
                                         </a>
                                     </li>
                                 </ul>

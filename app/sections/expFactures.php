@@ -4,10 +4,10 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Número</th>
-                    <th scope="col">Estado</th>
-                    <th scope="col">Importe</th>
-                    <th scope="col">Fecha</th>
+                    <th scope="col"><?php echo $text['Número'];?></th>
+                    <th scope="col"><?php echo $text['Estado'];?></th>
+                    <th scope="col"><?php echo $text['Importe'];?></th>
+                    <th scope="col"><?php echo $text['Fecha'];?></th>
                 </tr>
             </thead>
             <tbody>

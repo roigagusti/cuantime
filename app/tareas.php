@@ -18,7 +18,7 @@ $pagina = 'tareas';
     <?php include_once("sections/meta.php") ?>
 
     <!-- Títol i Favicons -->
-    <title>Cuantime. Tareas</title>
+    <title>Cuantime. <?php echo $text['Tareas'];?></title>
 
     <!-- CSS Libraries -->
     <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -55,12 +55,12 @@ $pagina = 'tareas';
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0">Tareas</h4>
+                                <h4 class="mb-0"><?php echo $text['Tareas'];?></h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="index.php">Cuantime</a></li>
-                                        <li class="breadcrumb-item active">Tareas</li>
+                                        <li class="breadcrumb-item active"><?php echo $text['Tareas'];?></li>
                                     </ol>
                                     </ol>
                                 </div>
@@ -77,7 +77,7 @@ $pagina = 'tareas';
                     <div class="row">
                         <div class="col-md-4">
                             <div>
-                                <button type="button" class="btn btn-success waves-effect waves-light mb-3" data-toggle="modal" data-target="#addTask"><i class="mdi mdi-plus mr-1"></i> Añadir tarea</button>
+                                <button type="button" class="btn btn-success waves-effect waves-light mb-3" data-toggle="modal" data-target="#addTask"><i class="mdi mdi-plus mr-1"></i> <?php echo $text['Añadir tarea'];?></button>
                             </div>
                         </div>
                     </div>
@@ -129,7 +129,7 @@ $pagina = 'tareas';
                                         "created_date"
                                         ],["AND"=>["idProjecte"=>$projecte['id'],"active"=>1],"ORDER"=>["created_date"=>"ASC"]
                                     ]);
-                                    if(count($tasques)==0){echo '<div class="row"><div class="col-md-12 notTasks text-center">No hay tareas</div></div>';}
+                                    if(count($tasques)==0){echo '<div class="row"><div class="col-md-12 notTasks text-center">'.$text['No hay tareas'].'</div></div>';}
                                     foreach($tasques as $tasca){
                                         $estat = ["Sin prisa","Tener en cuenta","Manos a la obra", "Urgente"];
                                         $badge = ["secondary","info","warning","danger"];
@@ -157,16 +157,16 @@ $pagina = 'tareas';
                                                             </a>
                                                             <div class="dropdown-menu dropdown-menu-right text-right">
                                                                 <a class="dropdown-item" href="conexiones/administracio.php?action=estatTask&prioritat=0&id=<?php echo $tasca['id'];?>">
-                                                                    <span class="badge badge-pill badge-soft-secondary font-size-12">Sin prisa</span>
+                                                                    <span class="badge badge-pill badge-soft-secondary font-size-12"><?php echo $text['Sin prisa'];?></span>
                                                                 </a>
                                                                 <a class="dropdown-item" href="conexiones/administracio.php?action=estatTask&prioritat=1&id=<?php echo $tasca['id'];?>">
-                                                                    <span class="badge badge-pill badge-soft-info font-size-12">Tener en cuenta</span>
+                                                                    <span class="badge badge-pill badge-soft-info font-size-12"><?php echo $text['Tener en cuenta'];?></span>
                                                                 </a>
                                                                 <a class="dropdown-item" href="conexiones/administracio.php?action=estatTask&prioritat=2&id=<?php echo $tasca['id'];?>">
-                                                                    <span class="badge badge-pill badge-soft-warning font-size-12">Manos a la obra</span>
+                                                                    <span class="badge badge-pill badge-soft-warning font-size-12"><?php echo $text['Manos a la obra'];?></span>
                                                                 </a>
                                                                 <a class="dropdown-item" href="conexiones/administracio.php?action=estatTask&prioritat=3&id=<?php echo $tasca['id'];?>">
-                                                                    <span class="badge badge-pill badge-soft-danger font-size-12">Urgente</span>
+                                                                    <span class="badge badge-pill badge-soft-danger font-size-12"><?php echo $text['Urgente'];?></span>
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -177,7 +177,7 @@ $pagina = 'tareas';
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-12 taskClose text-center">
-                                                        <a href="conexiones/administracio.php?action=removeTask&id=<?php echo $tasca['id'];?>">Borrar tarea</a>
+                                                        <a href="conexiones/administracio.php?action=removeTask&id=<?php echo $tasca['id'];?>"><?php echo $text['Borrar tarea'];?></a>
                                                     </div>
                                                 </div>
                                             </div>

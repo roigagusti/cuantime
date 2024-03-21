@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title mt-0" id="myModalLabel">Crear expediente</h5>
+                <h5 class="modal-title mt-0" id="myModalLabel"><?php echo $text['Crear expediente'];?></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -22,7 +22,7 @@
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <label>Número expedient</label>
+                                <label><?php echo $text['Número expedient'];?></label>
                                 <?php 
                                     $lastExp = $database->max("projectes","exp",["idUser"=>$userAdminEmpresa]);
                                     $numeroExp = $lastExp+1;
@@ -34,10 +34,10 @@
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <label class="control-label">Estado inicial</label>
+                                <label class="control-label"><?php echo $text['Estado inicial'];?></label>
                                 <select class="form-control" name="estatExp">
-                                    <option value="2">En proceso</option>
-                                    <option value="1">Pausa</option>
+                                    <option value="2"><?php echo $text['En proceso'];?></option>
+                                    <option value="1"><?php echo $text['Pausa'];?></option>
                                 </select>
                             </div>
                         </div>
@@ -46,9 +46,9 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="form-group">
-                                <label class="control-label">Oferta</label>
+                                <label class="control-label"><?php echo $text['Oferta'];?></label>
                                 <select class="form-control" name="expId">
-                                    <option>Seleccionar oferta aceptada</option>
+                                    <option><?php echo $text['Seleccionar oferta aceptada'];?></option>
                                     <?php
                                     $senseExpedient = $database->select("projectes", [
                                         "id",
@@ -72,14 +72,14 @@
                             </div>
                         </div>
                     </div>
-                    <p><a href="ofertes.php"><i class="mdi mdi-plus mr-1"></i> Nueva oferta</a></p>
-                    <p>Solo se muestran las ofertas aceptadas</a></p>
+                    <p><a href="ofertes.php"><i class="mdi mdi-plus mr-1"></i> <?php echo $text['Nueva oferta'];?></a></p>
+                    <p><?php echo $text['Solo se muestran las ofertas aceptadas'];?></a></p>
                     
                         
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-light waves-effect" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-primary waves-effect waves-light">Crear</button>
+                    <button type="button" class="btn btn-light waves-effect" data-dismiss="modal"><?php echo $text['Cancelar'];?></button>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light"><?php echo $text['Crear'];?></button>
                 </div>
             </form>
             <?php }?>

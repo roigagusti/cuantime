@@ -38,7 +38,7 @@
                         </div>
 
                         <div class="text-center plan-btn my-2">
-                            <a href="//app.cuantime.com/register.php" class="btn btn-primary waves-effect waves-light"><?php echo $text['Registrate ahora'];?></a>
+                            <a href="//app.cuantime.es/register.php" class="btn btn-primary waves-effect waves-light"><?php echo $text['Registrate ahora'];?></a>
                         </div>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
                         </div>
 
                         <div class="text-center plan-btn my-2">
-                            <a href="//app.cuantime.com/register.php" class="btn btn-primary waves-effect waves-light"><?php echo $text['Registrate ahora'];?></a>
+                            <a href="//app.cuantime.es/register.php" class="btn btn-primary waves-effect waves-light"><?php echo $text['Registrate ahora'];?></a>
                         </div>
                     </div>
                 </div>
@@ -103,7 +103,7 @@
                         </div>
 
                         <div class="text-center plan-btn my-2">
-                            <a href="//app.cuantime.com/register.php" class="btn btn-primary waves-effect waves-light"><?php echo $text['Registrate ahora'];?></a>
+                            <a href="//app.cuantime.es/register.php" class="btn btn-primary waves-effect waves-light"><?php echo $text['Registrate ahora'];?></a>
                         </div>
                     </div>
                 </div>

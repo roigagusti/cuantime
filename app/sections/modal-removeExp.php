@@ -2,18 +2,18 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title mt-0" id="myModalLabel">Confirmar borrado</h5>
+                <h5 class="modal-title mt-0" id="myModalLabel"><?php echo $text['Confirmar borrado'];?></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <form method="post" action="conexiones/administracio.php?action=removeExp&id=<?php echo $_GET['id'];?>" >
                 <div class="modal-body">
-                    <p>¿Estás seguro que quieres borrar este expediente?</p>
+                    <p><?php echo $text['¿Estás seguro que quieres borrar este expediente?'];?></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-light waves-effect" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-danger waves-effect waves-light">Borrar</button>
+                    <button type="button" class="btn btn-light waves-effect" data-dismiss="modal"><?php echo $text['Cancelar'];?></button>
+                    <button type="submit" class="btn btn-danger waves-effect waves-light"><?php echo $text['Borrar'];?></button>
                 </div>
             </form>
         </div><!-- /.modal-content -->

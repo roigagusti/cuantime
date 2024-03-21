@@ -67,7 +67,7 @@ function formatFactura($a){
     <?php include_once("sections/meta.php") ?>
 
     <!-- Títol i Favicons -->
-    <title>Cuantime. Perfil</title>
+    <title>Cuantime. <?php echo $text['Perfil'];?></title>
 
     <!-- CSS Libraries -->
     <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -105,7 +105,7 @@ function formatFactura($a){
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="index.php">Cuantime</a></li>
-                                        <li class="breadcrumb-item active">Perfil</li>
+                                        <li class="breadcrumb-item active"><?php echo $text['Perfil'];?></li>
                                     </ol>
                                 </div>
 
@@ -176,36 +176,36 @@ function formatFactura($a){
                         <div class="col-lg-4">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 style="font-size:16px">Mi empresa</h4>
+                                    <h4 style="font-size:16px"><?php echo $text['Mi empresa'];?></h4>
                                     <div class="profileDades">
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <ul class="dadesConfig">
-                                                    <li><div class="row"><div class="dadesTitles">Nombre</div> <div class="dadesFacturacio"><?php echo $empresaNom;?></div></div></li>
-                                                    <li><div class="row"><div class="dadesTitles">Dirección</div> <div class="dadesFacturacio"><?php echo $empresaDireccio;?></div></div></li>
-                                                    <li><div class="row"><div class="dadesTitles">Código postal</div> <div class="dadesFacturacio"><?php echo $empresaCP;?></div></div></li>
-                                                    <li><div class="row"><div class="dadesTitles">Ciudad</div> <div class="dadesFacturacio"><?php echo $empresaCiutat;?></div></div></li>
-                                                    <li><div class="row"><div class="dadesTitles">Teléfono</div> <div class="dadesFacturacio"><?php echo $empresaTelefon;?></div></div></li>
-                                                    <li><div class="row"><div class="dadesTitles">CIF</div> <div class="dadesFacturacio"><?php echo $empresaCIF;?></div></div></li>
+                                                    <li><div class="row"><div class="dadesTitles"><?php echo $text['Nombre'];?></div> <div class="dadesFacturacio"><?php echo $empresaNom;?></div></div></li>
+                                                    <li><div class="row"><div class="dadesTitles"><?php echo $text['Dirección'];?></div> <div class="dadesFacturacio"><?php echo $empresaDireccio;?></div></div></li>
+                                                    <li><div class="row"><div class="dadesTitles"><?php echo $text['Código postal'];?></div> <div class="dadesFacturacio"><?php echo $empresaCP;?></div></div></li>
+                                                    <li><div class="row"><div class="dadesTitles"><?php echo $text['Ciudad'];?></div> <div class="dadesFacturacio"><?php echo $empresaCiutat;?></div></div></li>
+                                                    <li><div class="row"><div class="dadesTitles"><?php echo $text['Teléfono'];?></div> <div class="dadesFacturacio"><?php echo $empresaTelefon;?></div></div></li>
+                                                    <li><div class="row"><div class="dadesTitles"><?php echo $text['CIF'];?></div> <div class="dadesFacturacio"><?php echo $empresaCIF;?></div></div></li>
                                                     <?php if($tipusUsuari<2){?>
                                                         <br>
-                                                        <li><div class="row"><div class="dadesTitles">Banco</div> <div class="dadesFacturacio"><?php echo $empresaBanc;?></div></div></li>
+                                                        <li><div class="row"><div class="dadesTitles"><?php echo $text['Banco'];?></div> <div class="dadesFacturacio"><?php echo $empresaBanc;?></div></div></li>
                                                         <li><div class="row"><div class="dadesTitles">IBAN</div> <div class="dadesFacturacio"><?php echo $empresaIBAN;?></div></div></li>
                                                         <li><div class="row"><div class="dadesTitles">SWIFT</div> <div class="dadesFacturacio"><?php echo $empresaSWIFT;?></div></div></li>
                                                         <br>
-                                                        <li><div class="row"><div class="dadesTitles">Prefijo factura</div> <div class="dadesFacturacio"><?php echo $empresaPrefixFactura;?></div></div></li>
-                                                        <li><div class="row"><div class="dadesTitles">Formato factura</div> <div class="dadesFacturacio"><?php echo $empresaFormatFactura;?></div></div></li>
-                                                        <li><div class="row"><div class="dadesTitles">Próxima factura</div> <div class="dadesFacturacio"><?php echo $empresaNextFactura;?></div></div></li>
+                                                        <li><div class="row"><div class="dadesTitles"><?php echo $text['Prefijo factura'];?></div> <div class="dadesFacturacio"><?php echo $empresaPrefixFactura;?></div></div></li>
+                                                        <li><div class="row"><div class="dadesTitles"><?php echo $text['Formato factura'];?></div> <div class="dadesFacturacio"><?php echo $empresaFormatFactura;?></div></div></li>
+                                                        <li><div class="row"><div class="dadesTitles"><?php echo $text['Próxima factura'];?></div> <div class="dadesFacturacio"><?php echo $empresaNextFactura;?></div></div></li>
                                                         <br>
                                                         <li><div class="row"><div class="dadesTitles">
-                                                                Creación de expedientes sin oferta
+                                                                <?php echo $text['Creación de expedientes sin oferta'];?>
                                                                 <a data-container="body" data-toggle="popover" data-placement="bottom" data-content="Permitir crear nuevos expedientes si no hay oferta aceptada para ese expediente." data-original-title="" title="" aria-describedby="popover295241"><i class="uil uil-info-circle"></i></a>
-                                                            </div> <div class="dadesFacturacio">No</div></div>
+                                                            </div> <div class="dadesFacturacio"><?php echo $text['No'];?></div></div>
                                                         </li>
                                                         <!--<li><div class="row"><div class="dadesTitles">Asignación por defecto <a data-container="body" data-toggle="popover" data-placement="bottom" data-content="Cuantía econòmica que es dedica als col·laboradors per defecte. Es pot variar a cada projecte." data-original-title="" title="" aria-describedby="popover295241"><i class="uil uil-info-circle"></i></a></div> <div class="dadesFacturacio"><?php echo number_format($empresaAssignacio,2,'.',',');?> %</div></div></li>-->
                                                         <?php if($tipusUsuari<2){?>
                                                             <br>
-                                                            <li><a data-toggle="modal" data-target="#userEmpresa" style="cursor:pointer;color:#34c38f">Editar datos</a></li>
+                                                            <li><a data-toggle="modal" data-target="#userEmpresa" style="cursor:pointer;color:#34c38f"><?php echo $text['Editar datos'];?></a></li>
                                                     <?php }}?>
                                                 </ul>
                                             </div>
@@ -218,18 +218,18 @@ function formatFactura($a){
                         <div class="col-lg-4">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 style="font-size:16px">Visibilidad en menú</h4>
+                                    <h4 style="font-size:16px"><?php echo $text['Visibilidad en menú'];?></h4>
                                     <div class="profileDades">
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <ul class="dadesConfig">
-                                                    <li><div class="row"><div class="dadesTitles">Tareas</div> <div class="dadesFacturacio">Si</div></div></li>
-                                                    <li><div class="row"><div class="dadesTitles">Expedientes</div> <div class="dadesFacturacio">Si</div></div></li>
-                                                    <li><div class="row"><div class="dadesTitles">Administración</div> <div class="dadesFacturacio">Si</div></div></li>
-                                                    <li><div class="row"><div class="dadesTitles">Management</div> <div class="dadesFacturacio">No</div></div></li>
-                                                    <li><div class="row"><div class="dadesTitles">Personal</div> <div class="dadesFacturacio">Si</div></div></li>
+                                                    <li><div class="row"><div class="dadesTitles"><?php echo $text['Tareas'];?></div> <div class="dadesFacturacio"><?php echo $text['Si'];?></div></div></li>
+                                                    <li><div class="row"><div class="dadesTitles"><?php echo $text['Expedientes'];?></div> <div class="dadesFacturacio"><?php echo $text['Si'];?></div></div></li>
+                                                    <li><div class="row"><div class="dadesTitles"><?php echo $text['Administración'];?></div> <div class="dadesFacturacio"><?php echo $text['Si'];?></div></div></li>
+                                                    <li><div class="row"><div class="dadesTitles"><?php echo $text['Management'];?></div> <div class="dadesFacturacio"><?php echo $text['No'];?></div></div></li>
+                                                    <li><div class="row"><div class="dadesTitles"><?php echo $text['Personal'];?></div> <div class="dadesFacturacio"><?php echo $text['Si'];?></div></div></li>
                                                     <br>
-                                                    <li><a data-toggle="modal" data-target="#userVisibility" style="cursor:pointer;color:#34c38f">Editar datos</a></li>
+                                                    <li><a data-toggle="modal" data-target="#userVisibility" style="cursor:pointer;color:#34c38f"><?php echo $text['Editar datos'];?></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -242,7 +242,7 @@ function formatFactura($a){
                         <div class="col-lg-4">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 style="font-size:16px">Configuración personal</h4>
+                                    <h4 style="font-size:16px"><?php echo $text['Configuración personal'];?></h4>
                                     <div class="profileConfig">
                                         <ul class="dadesConfig">
                                             <li><?php echo 'Nombre: '.$userName;?></li>
@@ -250,7 +250,7 @@ function formatFactura($a){
                                             <li><?php echo 'Contraseña: ********'?></li>
                                             <li><?php echo 'Idioma: '.ucfirst($langUsuari);?></li>
                                             <br>
-                                            <li><a data-toggle="modal" data-target="#editProfile" style="cursor:pointer;color:#34c38f">Cambiar configuración</a></li>
+                                            <li><a data-toggle="modal" data-target="#editProfile" style="cursor:pointer;color:#34c38f"><?php echo $text['Cambiar configuración'];?></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -259,21 +259,21 @@ function formatFactura($a){
                             <?php if($tipusUsuari<2){?>
                                 <div class="card">
                                 <div class="card-body">
-                                    <h4 style="font-size:16px">Suscripciones</h4>
+                                    <h4 style="font-size:16px"><?php echo $text['Suscripciones'];?></h4>
                                     <div class="profileSuscripcio">
                                         <?php switch($planUsuari){
-                                            case 1: echo '<div class="planTitle"><i class="uil uil-laptop text-primary"></i><br><strong>Manos a la obra.</strong> Plan expansión (9.99€/mes)</div>';
+                                            case 1: echo '<div class="planTitle"><i class="uil uil-laptop text-primary"></i><br><strong>'.$text['Manos a la obra'].'.</strong> '.$text['Plan expansión'].' (9.99€/mes)</div>';
                                                 break;
-                                            case 2: echo '<div class="planTitle"><i class="uil uil-plane-fly text-primary"></i><br><strong>Profesional.</strong> Plan profesional (19.99€/mes)</div>';
+                                            case 2: echo '<div class="planTitle"><i class="uil uil-plane-fly text-primary"></i><br><strong>'.$text['Profesional'].'.</strong> '.$text['Plan profesional'].' (19.99€/mes)</div>';
                                                 break;
-                                            default: echo '<div class="planTitle"><i class="uil uil-heart text-primary"></i><br><strong>Entre amigos.</strong> Plan inicial (0.00€/mes)</div>';
+                                            default: echo '<div class="planTitle"><i class="uil uil-heart text-primary"></i><br><strong>'.$text['Entre amigos'].'.</strong> '.$text['Plan inicial'].' (0.00€/mes)</div>';
                                                 break;
                                         }?>
                                         <?php if($userId==$userAdminEmpresa){?>
                                         <ul class="dadesConfig mt-4">
                                             <!--<li>Tu próxima facturación es el 9 de marzo de 2021</li>
                                             <br>-->
-                                            <li><a data-toggle="modal" data-target="#payment" style="cursor:pointer;color:#34c38f">Cambiar de plan</a></li>
+                                            <li><a data-toggle="modal" data-target="#payment" style="cursor:pointer;color:#34c38f"><?php echo $text['Cambiar de plan'];?></a></li>
                                             <!--<li><a href="#">Gestionar información de pago</a></li>
                                             <li><a href="#">Datos de facturación</a></li>-->
                                         </ul>

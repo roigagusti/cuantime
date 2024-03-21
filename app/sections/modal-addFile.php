@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title mt-0" id="myModalLabel">Añadir archivo</h5>
+                <h5 class="modal-title mt-0" id="myModalLabel"><?php echo $text['Añadir archivo'];?></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -14,7 +14,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="form-group">
-                                <label>Título de archivo</label>
+                                <label><?php echo $text['Título de archivo'];?></label>
                                 <div class="input-group">
                                     <input type="text" class="form-control" name="fileTitle">
                                 </div>
@@ -25,7 +25,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="form-group">
-                                <label>Archivo</label>
+                                <label><?php echo $text['Archivo'];?></label>
                                 <div class="input-group">
                                     <input type="file" name="addFile" id="addFile" required>
                                 </div>
@@ -36,7 +36,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="form-group">
-                                <label class="control-label">Mensaje</label>
+                                <label class="control-label"><?php echo $text['Mensaje'];?></label>
                                 <textarea rows="3" class="form-control resize-none" name="missatge" placeholder="Escribir mensaje..."></textarea>
                             </div>
                         </div>
@@ -44,8 +44,8 @@
                         
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-light waves-effect" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-primary waves-effect waves-light">Enviar</button>
+                    <button type="button" class="btn btn-light waves-effect" data-dismiss="modal"><?php echo $text['Cancelar'];?></button>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light"><?php echo $text['Enviar'];?></button>
                 </div>
             </form>
         </div><!-- /.modal-content -->

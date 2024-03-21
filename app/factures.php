@@ -16,7 +16,7 @@ include_once("classes/functions.php");
     <?php include_once("sections/meta.php") ?>
 
     <!-- Títol i Favicons -->
-    <title>Cuantime. Facturas</title>
+    <title>Cuantime. <?php echo $text['Facturas'];?></title>
 
     <!-- CSS Libraries -->
     <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -53,12 +53,12 @@ include_once("classes/functions.php");
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0">Facturas</h4>
+                                <h4 class="mb-0"><?php echo $text['Facturas'];?></h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                     <li class="breadcrumb-item"><a href="index.php">Cuantime</a></li>
-                                    <li class="breadcrumb-item active">Facturas</li>
+                                    <li class="breadcrumb-item active"><?php echo $text['Facturas'];?></li>
                                     </ol>
                                 </div>
 
@@ -75,7 +75,7 @@ include_once("classes/functions.php");
                     <div class="row">
                         <div class="col-md-4">
                             <div>
-                                <button type="button" class="btn btn-success waves-effect waves-light mb-3" data-toggle="modal" data-target="#addFactura"><i class="mdi mdi-plus mr-1"></i> Nueva factura</button>
+                                <button type="button" class="btn btn-success waves-effect waves-light mb-3" data-toggle="modal" data-target="#addFactura"><i class="mdi mdi-plus mr-1"></i> <?php echo $text['Nueva factura'];?></button>
                             </div>
                         </div>
                         <div class="col-lg-12">
@@ -92,18 +92,18 @@ include_once("classes/functions.php");
                                       "estat"
                                     ],["idUser"=>$userAdminEmpresa,"ORDER"=>["numero"=>"DESC"]]);
                                     $numFacturesToUser=count($factures);
-                                    if($numFacturesToUser==0){echo "<span style='color:#999'>Aun no se ha añadido ninguna factura</span>";}else{
+                                    if($numFacturesToUser==0){echo "<span style='color:#999'>".$text['Aun no se ha añadido ninguna factura']."</span>";}else{
                                     ?>
 
                                     <div class="table-responsive" style="min-height:300px">
                                         <table class="table table-centered table-nowrap mb-0">
                                             <thead class="thead-light">
                                                 <tr>
-                                                    <th style="width:100px">Número de factura</th>
-                                                    <th class="text-center" style="width:100px">Estado</th>
-                                                    <th class="text-center" style="width:100px">Importe</th>
-                                                    <th>Cliente</th>
-                                                    <th class="text-center" style="width:100px">Fecha</th>
+                                                    <th style="width:100px"><?php echo $text['Número de factura'];?></th>
+                                                    <th class="text-center" style="width:100px"><?php echo $text['Estado'];?></th>
+                                                    <th class="text-center" style="width:100px"><?php echo $text['Importe'];?></th>
+                                                    <th><?php echo $text['Cliente'];?></th>
+                                                    <th class="text-center" style="width:100px"><?php echo $text['Fecha'];?></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -126,10 +126,10 @@ include_once("classes/functions.php");
                                                             </a>
                                                             <div class="dropdown-menu dropdown-menu-right text-right">
                                                                 <a class="dropdown-item" href="conexiones/administracio.php?action=estatFactura&estat=1&id=<?php echo $factura['id'];?>">
-                                                                    <span class="badge badge-pill badge-soft-warning font-size-12">Pendiente</span>
+                                                                    <span class="badge badge-pill badge-soft-warning font-size-12"><?php echo $text['Pendiente'];?></span>
                                                                 </a>
                                                                 <a class="dropdown-item" href="conexiones/administracio.php?action=estatFactura&estat=2&id=<?php echo $factura['id'];?>">
-                                                                    <span class="badge badge-pill badge-soft-success font-size-12">Pagado</span>
+                                                                    <span class="badge badge-pill badge-soft-success font-size-12"><?php echo $text['Pagado'];?></span>
                                                                 </a>
                                                             </div>
                                                         </div>

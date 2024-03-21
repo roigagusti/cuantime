@@ -92,3 +92,15 @@ $(document).ready(function(){
 		$("div.alert").removeClass("show");
 	}, 5000);	
 });
+
+// 9. Mostrar i amagar stats en expedients
+function showStats(){
+    $("#stats").hasClass("hidden") ? $("#stats").removeClass("hidden") : $("#stats").addClass("hidden");
+	$("#button-show").addClass("hidden");
+	$("#button-hidden").removeClass("hidden");
+};
+function hideStats(){
+    $("#stats").hasClass("hidden") ? $("#stats").removeClass("hidden") : $("#stats").addClass("hidden");
+	$("#button-hidden").addClass("hidden");
+	$("#button-show").removeClass("hidden");
+};

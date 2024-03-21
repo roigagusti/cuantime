@@ -14,7 +14,7 @@ include_once("sections/languages.php");
   <?php include_once("sections/meta.php"); ?>
 
   <!-- Títol i Favicons -->
-  <title>Cuantime. Registro</title>
+  <title>Cuantime. <?php echo $text['Registro'];?></title>
 
   <!-- CSS Libraries -->
   <!-- CSS Custom -->
@@ -37,35 +37,35 @@ include_once("sections/languages.php");
   </div>
   <div class="right-side">
     <div class="franja-right box box-register">
-      <div class="register-title">Crear tu cuenta Cuantime</div>
+      <div class="register-title"><?php echo $text['Crear tu cuenta Cuantime'];?></div>
 
       <form class="form-signin" action="conexiones/register.php?lang=<?php echo $text['lang']; ?>" method="post">
         <div class="login-input">
-          <label for="name">Nombre completo</label>
+          <label for="name"><?php echo $text['Nombre completo'];?></label>
           <input type="text" id="name" name="name" placeholder="Gavin Belson" required>
-          <label for="email">Correo electrónico</label>
+          <label for="email"><?php echo $text['Correo electrónico'];?></label>
           <input type="text" id="email" placeholder="gavin@hooli.com" name="email" required>
-          <label for="password">Contraseña</label>
+          <label for="password"><?php echo $text['Contraseña'];?></label>
           <input type="password" id="password" placeholder="********" name="password" required>
-          <label for="re-password">Confirmar contraseña</label>
+          <label for="re-password"><?php echo $text['Confirmar contraseña'];?></label>
           <input type="password" id="re-password" placeholder="********" name="re-password" required>
           <div class="terms">
             <!-- Pot ser "checked", "disabled" o "checked disabled"-->
-            <input type="checkbox" name="agree-term" id="agree-term" onchange="termsChanged()">Estoy de acuerdo con los <a href="legal.php" target="_blank" class="term-service" required>Términos de servicio</a>
+            <input type="checkbox" name="agree-term" id="agree-term" onchange="termsChanged()"><?php echo $text['Estoy de acuerdo con los'];?> <a href="legal.php" target="_blank" class="term-service" required><?php echo $text['Términos de servicio'];?></a>
           </div>
         </div>
 
         <div class="submit-zone">
-          <button class="btn-access disabled" type="submit">Crear cuenta</button>
+          <button class="btn-access disabled" type="submit"><?php echo $text['Crear cuenta'];?></button>
         </div>
       </form>
       <div class="alert-zone">
-      <div class="register">¿Tienes una cuenta? <a href="login.php?lang=<?php echo $text['lang']; ?>">Inicia sesión</a></div>
+      <div class="register"><?php echo $text['¿Tienes una cuenta?'];?> <a href="login.php?lang=<?php echo $text['lang']; ?>"><?php echo $text['Inicia sesión'];?></a></div>
 
-        <div class="fail <?php if($_GET['event'] == 'email-exists'){}else{echo 'hidden';}?>">La cuenta de email ya existe</div>
-        <div class="fail <?php if($_GET['event'] == 'pass-differents'){}else{echo 'hidden';}?>">La contraseña y su confirmación no coinciden</div>
-        <div class="fail <?php if($_GET['event'] == 'email-fail'){}else{echo 'hidden';}?>">No ha sido posible enviar el email de registro</div>
-        <div class="success <?php if($_GET['event'] == 'success'){}else{echo 'hidden';}?>">Se ha completado el registro con éxito.<br>Se le ha enviado un email con instrucciones para activar la cuenta.</div>
+        <div class="fail <?php if($_GET['event'] == 'email-exists'){}else{echo 'hidden';}?>"><?php echo $text['La cuenta de email ya existe'];?></div>
+        <div class="fail <?php if($_GET['event'] == 'pass-differents'){}else{echo 'hidden';}?>"><?php echo $text['La contraseña y su confirmación no coinciden'];?></div>
+        <div class="fail <?php if($_GET['event'] == 'email-fail'){}else{echo 'hidden';}?>"><?php echo $text['No ha sido posible enviar el email de registro'];?></div>
+        <div class="success <?php if($_GET['event'] == 'success'){}else{echo 'hidden';}?>"><?php echo $text['Se ha completado el registro con éxito'];?>.<br><?php echo $text['Se le ha enviado un email con instrucciones para activar la cuenta'];?>.</div>
       </div>
     </div>
   </div>
